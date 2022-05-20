@@ -6,32 +6,35 @@
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 15:58:26 by tasantos          #+#    #+#             */
-/*   Updated: 2022/05/10 05:25:51 by tasantos         ###   ########.fr       */
+/*   Updated: 2022/05/13 08:07:03 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *src, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub;
-	size_t	i;
-	size_t	j;
+	char			*sub;
+	unsigned int	i;
+	unsigned int	s_len;
+	unsigned int	sub_len;
 
-	i = ft_strlen(src);
-	if (start > i)
+	s_len = ft_strlen(s);
+	i = 0;
+	sub = NULL;
+	if (start > s_len)
 		return (ft_strdup(""));
-	if (len > ft_strlen(src) - start)
-		len = ft_strlen(src) - start;
-	sub = (char *)malloc(sizeof(char) * (len + 1));
+	sub_len = ft_strlen(&s[start]);
+	if (len > sub_len)
+		len = sub_len;
+	sub = malloc((len + 1) * sizeof(char));
 	if (!sub)
 		return (NULL);
-	j = -1;
-	i = -1;
-	while (src[++i])
-		if (i == start)
-			while (++j < len)
-				sub[j] = src[j + i];
-	sub[j] = '\0';
+	while (i < len && s[start + i])
+	{
+		sub[i] = s[start + i];
+		i++;
+	}
+	sub[i] = '\0';
 	return (sub);
 }
