@@ -6,11 +6,11 @@
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 16:04:47 by tasantos          #+#    #+#             */
-/*   Updated: 2022/06/08 19:08:20 by tasantos         ###   ########.fr       */
+/*   Updated: 2022/06/10 22:28:48 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_line(char	*str)
 {
