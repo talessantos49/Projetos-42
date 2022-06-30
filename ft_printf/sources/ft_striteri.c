@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_substr.c                                      :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 16:13:43 by tasantos          #+#    #+#             */
-/*   Updated: 2022/05/23 14:10:09 by tasantos         ###   ########.fr       */
+/*   Created: 2022/05/10 15:21:16 by tasantos          #+#    #+#             */
+/*   Updated: 2022/05/10 18:10:19 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_substr(char const	*src, unsigned int	start, size_t	len);
-
-int	main(void)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char	entrada[] = "A substring inicia no u";
+	size_t	i;
 
-	printf("A resposta obtida foi: %s\n", ft_substr(entrada, 11, 50));	
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

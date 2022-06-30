@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_substr.c                                      :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 16:13:43 by tasantos          #+#    #+#             */
-/*   Updated: 2022/05/23 14:10:09 by tasantos         ###   ########.fr       */
+/*   Created: 2022/04/26 05:12:41 by tasantos          #+#    #+#             */
+/*   Updated: 2022/06/20 16:14:13 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_substr(char const	*src, unsigned int	start, size_t	len);
-
-int	main(void)
+char	*ft_strdup(const char	*src)
 {
-	char	entrada[] = "A substring inicia no u";
+	char	*target;
+	int		i;
+	int		len;
 
-	printf("A resposta obtida foi: %s\n", ft_substr(entrada, 11, 50));	
+	i = 0;
+	len = 0;
+	while (src[len])
+		len++;
+	target = malloc ((len + 1) * sizeof (char));
+	while (src[i])
+	{
+		target[i] = src[i];
+		i++;
+	}
+	target[i] = '\0';
+	return (target);
 }

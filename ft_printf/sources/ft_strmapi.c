@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_substr.c                                      :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 16:13:43 by tasantos          #+#    #+#             */
-/*   Updated: 2022/05/23 14:10:09 by tasantos         ###   ########.fr       */
+/*   Created: 2022/05/10 00:33:36 by tasantos          #+#    #+#             */
+/*   Updated: 2022/05/10 05:24:22 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_substr(char const	*src, unsigned int	start, size_t	len);
-
-int	main(void)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	entrada[] = "A substring inicia no u";
+	unsigned int	i;
+	char			*str;
 
-	printf("A resposta obtida foi: %s\n", ft_substr(entrada, 11, 50));	
+	i = 0;
+	str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!s)
+		return (NULL);
+	if (str == NULL)
+		return (NULL);
+	while (s[i])
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

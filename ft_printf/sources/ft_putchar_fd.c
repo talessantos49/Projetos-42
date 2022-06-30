@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_substr.c                                      :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 16:13:43 by tasantos          #+#    #+#             */
-/*   Updated: 2022/05/23 14:10:09 by tasantos         ###   ########.fr       */
+/*   Created: 2022/05/01 21:46:41 by tasantos          #+#    #+#             */
+/*   Updated: 2022/05/01 23:30:27 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <unistd.h>
 
-char	*ft_substr(char const	*src, unsigned int	start, size_t	len);
-
-int	main(void)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	entrada[] = "A substring inicia no u";
-
-	printf("A resposta obtida foi: %s\n", ft_substr(entrada, 11, 50));	
+	write(fd, &c, 1);
 }

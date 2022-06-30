@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_substr.c                                      :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 16:13:43 by tasantos          #+#    #+#             */
-/*   Updated: 2022/05/23 14:10:09 by tasantos         ###   ########.fr       */
+/*   Created: 2022/04/05 16:49:19 by tasantos          #+#    #+#             */
+/*   Updated: 2022/04/29 19:23:24 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-char	*ft_substr(char const	*src, unsigned int	start, size_t	len);
-
-int	main(void)
+int	ft_tolower(int c)
 {
-	char	entrada[] = "A substring inicia no u";
-
-	printf("A resposta obtida foi: %s\n", ft_substr(entrada, 11, 50));	
+	if (c >= 65 && c <= 90)
+		c = c + 32;
+	return (c);
 }

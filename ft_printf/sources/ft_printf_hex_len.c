@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_substr.c                                      :+:      :+:    :+:   */
+/*   ft_printf_hex_len.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 16:13:43 by tasantos          #+#    #+#             */
-/*   Updated: 2022/05/23 14:10:09 by tasantos         ###   ########.fr       */
+/*   Created: 2022/06/24 14:49:14 by tasantos          #+#    #+#             */
+/*   Updated: 2022/06/28 05:39:44 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "ft_printf.h"
 
-char	*ft_substr(char const	*src, unsigned int	start, size_t	len);
-
-int	main(void)
+long long int	ft_len_hex( unsigned long int nbr)
 {
-	char	entrada[] = "A substring inicia no u";
+	int	len;
 
-	printf("A resposta obtida foi: %s\n", ft_substr(entrada, 11, 50));	
+	len = 0;
+	if (!nbr)
+		return (0);
+	while (nbr > 0)
+	{
+		nbr = nbr / 16;
+		len++;
+	}
+	return (len);
 }

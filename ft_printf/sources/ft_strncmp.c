@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_substr.c                                      :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 16:13:43 by tasantos          #+#    #+#             */
-/*   Updated: 2022/05/23 14:10:09 by tasantos         ###   ########.fr       */
+/*   Created: 2022/04/06 20:25:47 by tasantos          #+#    #+#             */
+/*   Updated: 2022/05/09 15:32:38 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_substr(char const	*src, unsigned int	start, size_t	len);
-
-int	main(void)
+int	ft_strncmp(const char	*string, const char	*stringB, size_t i)
 {
-	char	entrada[] = "A substring inicia no u";
+	unsigned int	j;
+	unsigned char	*s1;
+	unsigned char	*s2;
 
-	printf("A resposta obtida foi: %s\n", ft_substr(entrada, 11, 50));	
+	s1 = (unsigned char *)string;
+	s2 = (unsigned char *)stringB;
+	j = 0;
+	if (i == 0)
+		return (0);
+	while (s1[j] && j < i)
+	{
+		if (s1[j] != s2[j])
+			return (s1[j] - s2[j]);
+		j++;
+	}
+	if (s1[j] == '\0')
+		return (s1[j] - s2[j]);
+	return (0);
 }

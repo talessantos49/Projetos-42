@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_substr.c                                      :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 16:13:43 by tasantos          #+#    #+#             */
-/*   Updated: 2022/05/23 14:10:09 by tasantos         ###   ########.fr       */
+/*   Created: 2022/04/28 16:24:12 by tasantos          #+#    #+#             */
+/*   Updated: 2022/05/10 05:08:44 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_substr(char const	*src, unsigned int	start, size_t	len);
-
-int	main(void)
+char	*ft_strjoin(const char	*string1, const char	*string2)
 {
-	char	entrada[] = "A substring inicia no u";
+	char	*join;
+	int		t;
+	int		k;
 
-	printf("A resposta obtida foi: %s\n", ft_substr(entrada, 11, 50));	
+	k = 0;
+	t = 0;
+	join = malloc(ft_strlen(string2) + ft_strlen(string1) + 1);
+	if (!join)
+		return (NULL);
+	while (string1[t])
+	{
+		join[t] = string1[t];
+		t++;
+	}
+	while (string2[k])
+	{
+		join[t] = string2[k];
+		t++;
+		k++;
+	}
+	join[t] = '\0';
+	return (join);
 }

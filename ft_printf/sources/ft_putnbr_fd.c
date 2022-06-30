@@ -1,30 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 20:57:25 by tasantos          #+#    #+#             */
-/*   Updated: 2022/05/26 14:14:25 by tasantos         ###   ########.fr       */
+/*   Created: 2022/05/02 00:34:07 by tasantos          #+#    #+#             */
+/*   Updated: 2022/05/10 14:04:25 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nitens, size_t size)
+int	is_positive(int n, int fd)
 {
-	void	*p;
-	size_t	total;
+	if (n < 0)
+	{
+		if (n == -2147483648)
+		{
+			write(fd, "-2", 2);
+			return (147483648);
+		}
+		else
+		{
+			write(fd, "-", 1);
+			return (-n);
+		}
+	}
+	else
+		return (n);
+}
 
-	total = nitens * size;
-	if (total > 2147483647)
-		return (NULL);
-	if (size > __SIZE_MAX__ / nitens)
-		return (NULL);
-	p = malloc(total);
-	if (!p)
-		return (NULL);
-	ft_bzero(p, total);
-	return (p);
+void	ft_putnbr_fd(int n, int fd)
+{
+	char	c;
+
+	n = is_positive(n, fd);
+	if (n < 10)
+	{
+		c = n + '0';
+		write(fd, &c, 1);
+	}
+	else
+	{
+		ft_putnbr_fd((n / 10), fd);
+		ft_putnbr_fd((n % 10), fd);
+	}
 }

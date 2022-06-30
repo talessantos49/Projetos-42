@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 00:52:53 by tasantos          #+#    #+#             */
-/*   Updated: 2022/06/02 14:08:30 by tasantos         ###   ########.fr       */
+/*   Created: 2022/04/20 20:29:21 by tasantos          #+#    #+#             */
+/*   Updated: 2022/05/02 00:10:34 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void	*dest, const void	*src, size_t num)
+int	ft_is_space(char c)
 {
-	unsigned int	i;
+	if ((c >= 9 && c <= 13) || c == ' ')
+		return (1);
+	return (0);
+}
+
+int	ft_atoi(const char	*str)
+{
+	long int	i;
+	long int	negative;
+	long int	num;
 
 	i = 0;
-	if (dest == NULL && src == NULL && num)
-		return (dest);
-	while (i < num)
+	num = 0;
+	negative = 1;
+	while (ft_is_space(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		((char *)dest)[i] = ((char *)src)[i];
+		if (str[i] == '-')
+			negative = -negative;
 		i++;
 	}
-	return (dest);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = (num * 10) + str[i] - '0';
+		i++;
+	}
+	return (num * negative);
 }

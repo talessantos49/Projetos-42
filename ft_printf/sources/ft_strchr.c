@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_substr.c                                      :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 16:13:43 by tasantos          #+#    #+#             */
-/*   Updated: 2022/05/23 14:10:09 by tasantos         ###   ########.fr       */
+/*   Created: 2022/04/06 18:06:07 by tasantos          #+#    #+#             */
+/*   Updated: 2022/05/09 14:13:06 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
-char	*ft_substr(char const	*src, unsigned int	start, size_t	len);
-
-int	main(void)
+char	*ft_strchr(const char *string, int c)
 {
-	char	entrada[] = "A substring inicia no u";
+	int		i;
 
-	printf("A resposta obtida foi: %s\n", ft_substr(entrada, 11, 50));	
+	i = 0;
+	while (string[i] != '\0' || string[i] == c)
+	{
+		if (string[i] == (char)c)
+			return ((char *)&string[i]);
+		i++;
+	}
+	return (NULL);
 }
