@@ -6,13 +6,15 @@
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 05:01:46 by tasantos          #+#    #+#             */
-/*   Updated: 2022/06/30 04:29:52 by tasantos         ###   ########.fr       */
+/*   Updated: 2022/07/01 18:37:31 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 #include "ft_printf.h"
+
+/* Aqui estão os testes realizados para verificação inicial do programa */
 
 int	ft_printf(const char *str_input, ...);
 

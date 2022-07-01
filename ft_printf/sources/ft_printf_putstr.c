@@ -6,12 +6,11 @@
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 14:01:37 by tasantos          #+#    #+#             */
-/*   Updated: 2022/06/28 05:05:25 by tasantos         ###   ########.fr       */
+/*   Updated: 2022/07/01 18:36:33 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 long long int	ft_putstr(char *s)
 {

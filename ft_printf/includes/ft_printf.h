@@ -6,7 +6,7 @@
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 14:22:09 by tasantos          #+#    #+#             */
-/*   Updated: 2022/06/30 05:07:26 by tasantos         ###   ########.fr       */
+/*   Updated: 2022/07/01 18:35:56 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdarg.h>
 # include "libft.h"
-# include <unistd.h>
 
 char			*new_alocation(int len);
 long long int	ft_len_hex(unsigned long int nbr);
