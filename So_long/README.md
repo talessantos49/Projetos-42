@@ -1,4 +1,6 @@
-Hello There! This is my So_long Project.
+Hello There! 👋 
+
+This is my So_long Project.
 
 I'm glad to see you here. Feel free to see and ask me what you want
 
