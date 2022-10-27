@@ -2,10 +2,14 @@
 #
 ### What is 42?
 
-42 is a School (and a group of crazy people) who works to chance the world, line-by-line. Here, we dont learn how do programs, we learn, how be a better human coder!
+42 is the answer for the wolrd, universe and all the things!(paraphrasing Douglas Adams) School (and a group of crazy people) who works to chance the world, line-by-line. Here, we dont learn how do programs, we learn, how be a better human coder!
 But Tales, what is Human Coder?
 Human coder are people who can code solutions to change things to do the life better than yesterday. We learn to saw diferents kinds of the same problem and solve then, and if we need to use code, we use code! 
-I think everyone here, passione about technologies.
+I think everyone here, are passionate about technology.
+
+#
+
+All projects made by me I'll bring here and tell for everyone, about what is and the creation process.
 
 <div align="left">
 <img src="https://img.shields.io/badge/Projects-Concluded-success"/>
