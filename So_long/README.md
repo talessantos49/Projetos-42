@@ -1,5 +1,9 @@
+Hello There! This is my So_long Project.
+
+I'm glad to see you here. Feel free to see and ask me what you want
+
 ## Introduction
-This project is a very small 2D game. Its purpose is to make you work with textures, sprites, and some other very basic gameplay elements. 
+This project is a very small 2D game. Its purpose is to make you work with textures, sprites, and some other very basic gameplay elements.
 
 In this project, the goal is for the player to collect all the collectibles on the map before going to an exit. However, the game must follow a set of rules which are described bellow.
 
