@@ -1,5 +1,12 @@
-# Projetos-42
-Todos os projetos e programas desenvolvidos por mim na 42 école.
+![42-SP](https://user-images.githubusercontent.com/86013047/198174690-e4e6420e-79fd-4ee4-9a62-0426f3b843cf.png)
+#
+### What is 42?
+
+42 is a School (and a group of crazy people) who works to chance the world, line-by-line. Here, we dont learn how do programs, we learn, how be a better human coder!
+But Tales, what is Human Coder?
+Human coder are people who can code solutions to change things to do the life better than yesterday. We learn to saw diferents kinds of the same problem and solve then, and if we need to use code, we use code! 
+I think everyone here, passione about technologies.
+
 <div align="left">
 <img src="https://img.shields.io/badge/Projects-Concluded-success"/>
 </div>
