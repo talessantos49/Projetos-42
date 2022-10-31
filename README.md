@@ -1,18 +1,30 @@
 ![42-SP](https://user-images.githubusercontent.com/86013047/198174690-e4e6420e-79fd-4ee4-9a62-0426f3b843cf.png)
-#
-### What is 42?
+
+---
+
+### What is 42 🛸?
 
 42 is the answer for the wolrd, universe and all the things!(paraphrasing Douglas Adams) School (and a group of crazy people) who works to chance the world, line-by-line. Here, we dont learn how do programs, we learn, how be a better human coder!
 But Tales, what is Human Coder?
 Human coder are people who can code solutions to change things to do the life better than yesterday. We learn to saw diferents kinds of the same problem and solve then, and if we need to use code, we use code! 
 I think everyone here, are passionate about technology.
 
+Part of the larger [42 Network](https://www.42.fr/42-network/),
+[42 São Paulo](https://www.42sp.org.br/) is a software engineering school
+that offers a healthy alternative to traditional education:
+
+- It doesn't have any teachers and classes.
+- Students learn by cooperating
+  and correcting each other's work (peer-to-peer learning).
+- Its focus is as much on social skills as it is on technical skills.
+- It's completely free to anyone that passes its selection process
+
 #### Before start
 
 You need to know we have a loot of norms and restrictions, like we cant use `for`, our program must have no more than 25 lines, etc;
 If you want to see more than this, see the [norminette](https://github.com/42school/norminette)
 
-#
+---
 
 All projects made by me I'll bring here and tell for everyone, about what is and the creation process.
 
