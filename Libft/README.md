@@ -11,7 +11,7 @@ Here, we can't use the real functions, we need to use our functions in all procc
 
 And No Leaks will be tolerated. 
 
-In this project, you must re-code a set of the libc functions, as defined in their man. Your functions will need to present the same prototype and behaviors as the originals. Your functions’ names must be prefixed by “ft_”. For instance strlen becomes ft_strlen.
+In this project, you must re-code a set of the libc functions, as defined in their man. Your functions will need to present the same prototype and behaviors as the originals. Your functions’ names must be prefixed by “ft_”(`F`orty - `T`wo). For instance strlen becomes ft_strlen.
 
 ### Libc functions
 <table>
