@@ -1,0 +1,33 @@
+==211== Memcheck, a memory error detector
+==211== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==211== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==211== Command: ./pipex file-in wc\ -l cat\ -e file-out
+==211== Parent PID: 210
+==211== 
+==211== 
+==211== HEAP SUMMARY:
+==211==     in use at exit: 25 bytes in 2 blocks
+==211==   total heap usage: 31 allocs, 29 frees, 1,910 bytes allocated
+==211== 
+==211== 12 bytes in 1 blocks are still reachable in loss record 1 of 2
+==211==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==211==    by 0x401823: ft_strjoin (in /home/coder/Projetos-42/Pipex/pipex)
+==211==    by 0x4012B4: find_cmd (pipex.c:36)
+==211==    by 0x401623: check_arguments (pipex_utils.c:53)
+==211==    by 0x4013DD: main (pipex.c:62)
+==211== 
+==211== 13 bytes in 1 blocks are still reachable in loss record 2 of 2
+==211==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==211==    by 0x401823: ft_strjoin (in /home/coder/Projetos-42/Pipex/pipex)
+==211==    by 0x4012B4: find_cmd (pipex.c:36)
+==211==    by 0x40168B: check_arguments (pipex_utils.c:61)
+==211==    by 0x4013DD: main (pipex.c:62)
+==211== 
+==211== LEAK SUMMARY:
+==211==    definitely lost: 0 bytes in 0 blocks
+==211==    indirectly lost: 0 bytes in 0 blocks
+==211==      possibly lost: 0 bytes in 0 blocks
+==211==    still reachable: 25 bytes in 2 blocks
+==211==         suppressed: 0 bytes in 0 blocks
+==211== 
+==211== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

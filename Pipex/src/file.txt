@@ -1,0 +1,11 @@
+      7      56     322
+A quantidade de argumentos é: 5
+O valor j é [0]
+O valor j é [1]
+O valor j é [2]
+O valor j
+ I�s�s o[ 3�]�
+ um processo filho[3]
+O valor j é [3]
+  8  31 148 file-out
+  9  35 169 file-out
