@@ -1,33 +1,79 @@
-==211== Memcheck, a memory error detector
-==211== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==211== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==211== Command: ./pipex file-in wc\ -l cat\ -e file-out
-==211== Parent PID: 210
-==211== 
-==211== 
-==211== HEAP SUMMARY:
-==211==     in use at exit: 25 bytes in 2 blocks
-==211==   total heap usage: 31 allocs, 29 frees, 1,910 bytes allocated
-==211== 
-==211== 12 bytes in 1 blocks are still reachable in loss record 1 of 2
-==211==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==211==    by 0x401823: ft_strjoin (in /home/coder/Projetos-42/Pipex/pipex)
-==211==    by 0x4012B4: find_cmd (pipex.c:36)
-==211==    by 0x401623: check_arguments (pipex_utils.c:53)
-==211==    by 0x4013DD: main (pipex.c:62)
-==211== 
-==211== 13 bytes in 1 blocks are still reachable in loss record 2 of 2
-==211==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==211==    by 0x401823: ft_strjoin (in /home/coder/Projetos-42/Pipex/pipex)
-==211==    by 0x4012B4: find_cmd (pipex.c:36)
-==211==    by 0x40168B: check_arguments (pipex_utils.c:61)
-==211==    by 0x4013DD: main (pipex.c:62)
-==211== 
-==211== LEAK SUMMARY:
-==211==    definitely lost: 0 bytes in 0 blocks
-==211==    indirectly lost: 0 bytes in 0 blocks
-==211==      possibly lost: 0 bytes in 0 blocks
-==211==    still reachable: 25 bytes in 2 blocks
-==211==         suppressed: 0 bytes in 0 blocks
-==211== 
-==211== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==28214== Memcheck, a memory error detector
+==28214== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==28214== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==28214== Command: /usr/bin/ls
+==28214== Parent PID: 28213
+==28214== 
+==28214== 
+==28214== Process terminating with default action of signal 13 (SIGPIPE)
+==28214==    at 0x49941E7: write (write.c:26)
+==28214==    by 0x491500C: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1181)
+==28214==    by 0x4916AD0: new_do_write (fileops.c:449)
+==28214==    by 0x4916AD0: _IO_new_do_write (fileops.c:426)
+==28214==    by 0x4916AD0: _IO_do_write@@GLIBC_2.2.5 (fileops.c:423)
+==28214==    by 0x49145F7: _IO_file_sync@@GLIBC_2.2.5 (fileops.c:799)
+==28214==    by 0x4908545: fflush (iofflush.c:40)
+==28214==    by 0x11F3A7: ??? (in /usr/bin/ls)
+==28214==    by 0x11F290: ??? (in /usr/bin/ls)
+==28214==    by 0x115FF6: ??? (in /usr/bin/ls)
+==28214==    by 0x48CCA26: __run_exit_handlers (exit.c:108)
+==28214==    by 0x48CCBDF: exit (exit.c:139)
+==28214==    by 0x48AA0B9: (below main) (libc-start.c:342)
+==28214== 
+==28214== HEAP SUMMARY:
+==28214==     in use at exit: 20,532 bytes in 14 blocks
+==28214==   total heap usage: 51 allocs, 37 frees, 63,159 bytes allocated
+==28214== 
+==28214== 56 bytes in 1 blocks are still reachable in loss record 1 of 6
+==28214==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28214==    by 0x11D8CC: ??? (in /usr/bin/ls)
+==28214==    by 0x11DAF8: ??? (in /usr/bin/ls)
+==28214==    by 0x11C890: ??? (in /usr/bin/ls)
+==28214==    by 0x10D8F6: ??? (in /usr/bin/ls)
+==28214==    by 0x48AA0B2: (below main) (libc-start.c:308)
+==28214== 
+==28214== 56 bytes in 1 blocks are still reachable in loss record 2 of 6
+==28214==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28214==    by 0x11D8CC: ??? (in /usr/bin/ls)
+==28214==    by 0x11DAF8: ??? (in /usr/bin/ls)
+==28214==    by 0x11C890: ??? (in /usr/bin/ls)
+==28214==    by 0x10D955: ??? (in /usr/bin/ls)
+==28214==    by 0x48AA0B2: (below main) (libc-start.c:308)
+==28214== 
+==28214== 76 bytes in 9 blocks are still reachable in loss record 3 of 6
+==28214==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28214==    by 0x11D8CC: ??? (in /usr/bin/ls)
+==28214==    by 0x11DAF8: ??? (in /usr/bin/ls)
+==28214==    by 0x112BE7: ??? (in /usr/bin/ls)
+==28214==    by 0x113E1E: ??? (in /usr/bin/ls)
+==28214==    by 0x10DB5C: ??? (in /usr/bin/ls)
+==28214==    by 0x48AA0B2: (below main) (libc-start.c:308)
+==28214== 
+==28214== 128 bytes in 1 blocks are still reachable in loss record 4 of 6
+==28214==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28214==    by 0x11EDC9: ??? (in /usr/bin/ls)
+==28214==    by 0x10DA7E: ??? (in /usr/bin/ls)
+==28214==    by 0x48AA0B2: (below main) (libc-start.c:308)
+==28214== 
+==28214== 216 bytes in 1 blocks are still reachable in loss record 5 of 6
+==28214==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28214==    by 0x11D8CC: ??? (in /usr/bin/ls)
+==28214==    by 0x10F2CA: ??? (in /usr/bin/ls)
+==28214==    by 0x113C88: ??? (in /usr/bin/ls)
+==28214==    by 0x10DB5C: ??? (in /usr/bin/ls)
+==28214==    by 0x48AA0B2: (below main) (libc-start.c:308)
+==28214== 
+==28214== 20,000 bytes in 1 blocks are still reachable in loss record 6 of 6
+==28214==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28214==    by 0x11D8CC: ??? (in /usr/bin/ls)
+==28214==    by 0x10DAEF: ??? (in /usr/bin/ls)
+==28214==    by 0x48AA0B2: (below main) (libc-start.c:308)
+==28214== 
+==28214== LEAK SUMMARY:
+==28214==    definitely lost: 0 bytes in 0 blocks
+==28214==    indirectly lost: 0 bytes in 0 blocks
+==28214==      possibly lost: 0 bytes in 0 blocks
+==28214==    still reachable: 20,532 bytes in 14 blocks
+==28214==         suppressed: 0 bytes in 0 blocks
+==28214== 
+==28214== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

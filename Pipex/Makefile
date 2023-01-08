@@ -6,7 +6,7 @@
 #    By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 17:15:41 by tasantos          #+#    #+#              #
-#    Updated: 2023/01/07 18:36:09 by tasantos         ###   ########.fr        #
+#    Updated: 2023/01/08 05:39:28 by tasantos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SOURCES_DIR		= ./src/
 
 HEADERS_LIST	= pipex.h
 SOURCES_LIST	= pipex.c \
-				pipex_utils.c
+				pipex_utils.c \
+				split_pipex.c
 
 GREEN			= \033[0;32m
 
@@ -47,8 +48,8 @@ RM 				= rm -f
 #--log-file=valgrind-out.txt
 
 VALGRIND 		= @valgrind --leak-check=full --show-leak-kinds=all \
---track-origins=yes --log-file=valgrind-out.txt -s
-#--trace-children=yes --track-fds=yes
+--track-origins=yes --trace-children=yes --log-file=valgrind-out.txt -s
+#--track-origins=yes --trace-children=yes --log-file=valgrind-out.txt -s
 
 all:			${NAME}
 #				@clear
@@ -74,7 +75,7 @@ dance_duck:
 			${CC} ${CFLAGS} ${SOURCES} ${DOT_A} ${LIBFT}
 
 valgrind:
-	$(VALGRIND) ./pipex file-in "wc -l" "cat -e" file-out
+	$(VALGRIND) ./pipex file-in "ls" "ls" file-out
 
 clean:
 			make -sC ${LIBFT_DIR} clean

@@ -6,7 +6,7 @@
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:47:14 by tasantos          #+#    #+#             */
-/*   Updated: 2023/01/07 19:06:00 by tasantos         ###   ########.fr       */
+/*   Updated: 2023/01/08 05:31:41 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	child_process(t_pipex *pipex, char	**argv, char *envp[])
 	close(pipex->pipefd[IN]);
 	dup2(pipex->pipefd[OUT], STDOUT);
 	close(pipex->pipefd[OUT]);
-	pipex->cmd = ft_split(argv[2], ' ');
+	pipex->cmd = ft_split_pipex(argv[2], ' ');
 	execve(pipex->first_command, pipex->cmd, envp);
 }
 
@@ -70,14 +70,12 @@ int	main(int argc, char **argv, char *envp[])
 		child_process (&pipex, argv, envp);
 	else
 	{
-//		free(pipex.first_command);
-		fork();
 		close(pipex.pipefd[OUT]);
 		dup2(pipex.pipefd[IN], STDIN);
 		close(pipex.pipefd[IN]);
 		dup2(pipex.fd[1], STDOUT);
 		close(pipex.fd[1]);
-		pipex.cmd = ft_split(argv[3], ' ');
+		pipex.cmd = ft_split_pipex(argv[3], ' ');
 		execve(pipex.second_command, pipex.cmd, envp);
 	}
 	waitpid(pipex.pid, &status, 0);

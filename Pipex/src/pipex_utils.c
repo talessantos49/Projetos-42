@@ -6,7 +6,7 @@
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:47:14 by tasantos          #+#    #+#             */
-/*   Updated: 2023/01/07 22:25:00 by tasantos         ###   ########.fr       */
+/*   Updated: 2023/01/08 05:36:35 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,42 +35,39 @@ int	open_file(char	*file_path, int mode)
 	}
 }
 
+void	validated_args(t_pipex *pipex, char	**argv, char *envp[])
+{
+	pipex->path_command = ft_split(find_path(envp), ':');
+	pipex->first_command_arg = ft_split_pipex(argv[2], ' ');
+	pipex->first_command = find_cmd(pipex->path_command, \
+	pipex->first_command_arg[0]);
+	free_split(pipex->first_command_arg);
+	if (pipex->first_command == NULL)
+	{
+		free(pipex->first_command);
+		exit_error(argv[2], 1);
+	}
+	pipex->second_command_arg = ft_split_pipex(argv[3], ' ');
+	pipex->second_command = find_cmd(pipex->path_command, \
+	pipex->second_command_arg[0]);
+	free_split(pipex->second_command_arg);
+	free_split(pipex->path_command);
+	if (pipex->second_command == NULL)
+	{
+		free(pipex->second_command);
+		exit_error(argv[3], 1);
+	}
+}
+
 void	check_arguments(int argc, char	**argv, char *envp[], t_pipex *pipex)
 {
-	char	**path_command;
-	char	**firstCommandArg;
-	char	**secondCommandArg;
-
 	if (argc != 5)
 	{
 		write(2, "Input must be: ./pipex infile cmd1 cmd2 outfile\n", 56);
 		exit(1);
 	}
 	else
-	{
-		path_command = ft_split(find_path(envp), ':');
-		firstCommandArg = ft_split(argv[2], ' ');
-		pipex->first_command = find_cmd(path_command, firstCommandArg[0]);
-		free_split(firstCommandArg);
-		if (pipex->first_command == NULL)
-		{
-			free(pipex->first_command);
-			exit_error(argv[2], 1);
-		}
-		secondCommandArg = ft_split(argv[3], ' ');
-		pipex->second_command = find_cmd(path_command, secondCommandArg[0]);
-		free_split(secondCommandArg);
-		free_split(path_command);
-		if (pipex->second_command == NULL)
-		{
-			free(pipex->second_command);
-			exit_error(argv[3], 1);
-		}
-		if (!access(argv[4], W_OK))
-			exit_error(argv[4], 1);
-		if (access(argv[1], F_OK))
-			exit_error(argv[1], 1);
-	}
+		validated_args (pipex, argv, envp);
 }
 
 void	free_split(char	**vectors)
@@ -78,7 +75,7 @@ void	free_split(char	**vectors)
 	int	i;
 
 	i = 0;
-	while(vectors[i] != NULL)
+	while (vectors[i] != NULL)
 	{
 		free (vectors[i]);
 		i++;
