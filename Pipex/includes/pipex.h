@@ -59,5 +59,6 @@ void	free_all(t_pipex *pipex);
 void	free_split(char	**vectors);
 char	**ft_split_pipex(char const *s, char c);
 void	validated_args(t_pipex *pipex, char	**argv, char *envp[]);
+void	error_and_exit(int exit, t_pipex *pipex);
 
 #endif

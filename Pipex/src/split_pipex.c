@@ -90,3 +90,11 @@ char	**ft_split_pipex(char const *str, char delimiter)
 	string[split.index] = 0;
 	return (string);
 }
+
+void	error_and_exit(int number_exit, t_pipex *pipex)
+{
+	write(2, "bash: : command not found\n", 26);
+	free_split(pipex->path_command);
+	free_split(pipex->first_command_arg);
+	exit(number_exit);
+}

@@ -76,7 +76,7 @@ dance_duck:
 
 valgrind:
 #	$(VALGRIND) ./pipex file-in "echo 'hi 42'" "tr ' ' '-'" file-out
-	$(VALGRIND) ./pipex file-in "ls" "ls" file-out
+	$(VALGRIND) ./pipex file-in "ls" " " file-out
 
 clean:
 			make -sC ${LIBFT_DIR} clean
