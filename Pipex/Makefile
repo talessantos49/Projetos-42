@@ -75,7 +75,8 @@ dance_duck:
 			${CC} ${CFLAGS} ${SOURCES} ${DOT_A} ${LIBFT}
 
 valgrind:
-	$(VALGRIND) ./pipex file-in "echo 'hi 42'" "tr ' ' '-'" file-out
+#	$(VALGRIND) ./pipex file-in "echo 'hi 42'" "tr ' ' '-'" file-out
+	$(VALGRIND) ./pipex file-in "ls" "ls" file-out
 
 clean:
 			make -sC ${LIBFT_DIR} clean

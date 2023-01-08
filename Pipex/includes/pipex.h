@@ -51,7 +51,7 @@ typedef struct s_split
 
 int		exit_error(char *string, int exitValue);
 char	*find_path(char	**envp);
-char	*find_cmd(char **path_command, char	*cmd);
+char	*find_cmd(char **path_command, char	*cmd, t_pipex *pipex, int order);
 int		open_file(char	*file_path, int mode);
 void	check_arguments(int argc, char	**argv, char *envp[], t_pipex *pipex);
 void	child_process(t_pipex *pipex, char	**argv, char *envp[]);

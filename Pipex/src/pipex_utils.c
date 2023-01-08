@@ -40,7 +40,7 @@ void	validated_args(t_pipex *pipex, char	**argv, char *envp[])
 	pipex->path_command = ft_split(find_path(envp), ':');
 	pipex->first_command_arg = ft_split_pipex(argv[2], ' ');
 	pipex->first_command = find_cmd(pipex->path_command, \
-	pipex->first_command_arg[0]);
+	pipex->first_command_arg[0], pipex, 1);
 	free_split(pipex->first_command_arg);
 	if (pipex->first_command == NULL)
 	{
@@ -49,7 +49,7 @@ void	validated_args(t_pipex *pipex, char	**argv, char *envp[])
 	}
 	pipex->second_command_arg = ft_split_pipex(argv[3], ' ');
 	pipex->second_command = find_cmd(pipex->path_command, \
-	pipex->second_command_arg[0]);
+	pipex->second_command_arg[0], pipex, 2);
 	free_split(pipex->second_command_arg);
 	free_split(pipex->path_command);
 	if (pipex->second_command == NULL)

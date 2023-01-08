@@ -25,11 +25,26 @@ char	*find_path(char	**envp)
 	return (*envp + 5);
 }
 
-char	*find_cmd(char **path_command, char	*cmd)
+char	*find_cmd(char **path_command, char	*cmd, t_pipex *pipex, int order)
 {
 	char	*temp;
 	char	*command;
 
+	if ((path_command == NULL || cmd == NULL) && order == 1)
+	{
+		write(2, "bash: : command not found\n", 26);
+		free_split(pipex->path_command);
+		free_split(pipex->first_command_arg);
+		exit(127);
+	}
+	if ((path_command == NULL || cmd == NULL) && order == 2)
+		{
+		write(2, "bash: : command not found\n", 26);
+		free_split(pipex->path_command);
+		free(pipex->first_command);
+		free_split(pipex->second_command_arg);
+		exit(127);
+	}
 	while (*path_command)
 	{
 		temp = ft_strjoin(*path_command, "/");
