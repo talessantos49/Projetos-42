@@ -1,0 +1,13 @@
+file-in
+file-out
+includes
+libft
+Makefile
+newfile1-out
+newfile-out
+objects
+pfile-in
+pfile-out
+pipex
+src
+valgrind-out.txt
