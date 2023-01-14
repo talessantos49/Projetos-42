@@ -6,6 +6,7 @@
 
 42 is the answer for the wolrd, universe and all the things!(paraphrasing Douglas Adams) School (and a group of crazy people) who works to chance the world, line-by-line. Here, we dont learn how do programs, we learn, how be a better human coder!
 But Tales, what is Human Coder?
+
 Human coder are people who can code solutions to change things to do the life better than yesterday. We learn to saw diferents kinds of the same problem and solve then, and if we need to use code, we use code! 
 I think everyone here, are passionate about technology.
 
@@ -45,10 +46,13 @@ All projects made by me I'll bring here and tell for everyone, about what is and
 <a href="https://github.com/talessantos49/Projetos-42/tree/main/So_long">
   <img src="https://user-images.githubusercontent.com/86013047/197646377-9c7596a4-4a11-4633-8304-69cb0d467997.png"/>
 </a>
+<a href="https://github.com/talessantos49/Projetos-42/tree/main/Pipex">
+  <img src="https://user-images.githubusercontent.com/86013047/212491370-c027b052-c84e-46d8-82d6-21987407563c.png"/>
+</a>
 </div>
 
 <div align="left">
   :construction: Projects Under Construction :construction: 
 </div>
-<img src="https://user-images.githubusercontent.com/86013047/197646475-7c020315-169a-4d2a-87c4-a4ddc48ff455.png"/>
+<img src="https://user-images.githubusercontent.com/86013047/212491435-9a77cc9b-2afa-470c-9616-1cea8078e09e.png"/>
 
