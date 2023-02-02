@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Student Form</title>
+    <script src='./popup.js'></script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>Firstname</td>
+                <td><input type="text" id="firstname"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type="number" id="age"></td>
+            </tr>
+            <tr>
+                <td>Telephone</td>
+                <td><input type="tel" id="phone"></td>
+            </tr>
+            <tr>
+                <td>E-mail</td>
+                <td><input type="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>Student at 42?</td>
+                <td>
+                    <input type="checkbox" id="student" name="Student42" value="yes">
+                    <label for="yes">Yes</label>    
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" id="gender_male" name="Gender" value="Male">
+                    <label for="Male">Male</label>
+                    <input type="radio" id="gender_female" name="Gender" value="Female">
+                    <label for="Female">Female</label>
+                    <input type="radio" id="gender_other" name="Other" value="Other">
+                    <label for="Other">Other</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Submit" onclick="displayFormContents();">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
