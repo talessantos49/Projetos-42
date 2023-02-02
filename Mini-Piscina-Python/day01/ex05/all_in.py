@@ -29,7 +29,7 @@ def all_in():
             for x in arguments:
                 temp = x
                 if temp == '':
-                    exit(1)
+                    return
             for i in arguments:
                 temp = i.strip()
                 if temp != '':

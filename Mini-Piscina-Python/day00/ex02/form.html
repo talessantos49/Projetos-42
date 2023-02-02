@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="popup.js"></script>
-    <title>form.html</title>
-</head>
-<body>
-    <form name="Tales Forms">
-        Firstname:
-        <input type="text" id="firstname">
-        <br>
-        Name:
-        <input type="text" id="name">
-        <br>
-        Age:
-        <input type="number" id="age">
-        <br>
-        Phone:
-        <input type="tel" id="phone"> 
-        <br>
-        E-mail:
-        <input type="email" id="email">
-        <br>
-        Student at 42?
-        <input type="checkbox" name="studentChoice" id="student">
-        <br>
-        Male
-        <input type="radio" name="gender" id="gender_male" value="Male">
-        Female
-        <input type="radio" name="gender" id="gender_female" value="Female">
-        Other
-        <input type="radio" name="gender" id="gender_other" value="Other">
-        <br>
-        <input type="button" onclick="displayFormContents()" value="Run that sexy Javascript!">
-    </form>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <script src="popup.js"></script>
+        <title>form.html</title>
+    </head>
+    <body>
+        <form name="Tales Forms">
+            <label>Firstname:</label>
+            <input type="text" id="firstname"><br>
+            <label>Name:</label>
+            <input type="text" id="name"><br>
+            <label>Age:</label>
+            <input type="number" id="age"><br>
+            <label>Phone:</label>
+            <input type="tel" id="phone"><br>            
+            <label>E-mail:</label>
+            <input type="email" id="email"><br>
+            <label>Student at 42?</label>
+            <input type="checkbox" name="studentChoice" id="student"><br>
+            <label>Male</label>
+            <input type="radio" name="gender" id="gender_male" value="Male">
+            <label>Female</label>
+            <input type="radio" name="gender" id="gender_female" value="Female">
+            <label>Other</label>
+            <input type="radio" name="gender" id="gender_other" value="Other"><br>
+            <input type="button" onclick="displayFormContents()" value="Run that sexy Javascript!">
+        </form>
+    </body>
 </html>

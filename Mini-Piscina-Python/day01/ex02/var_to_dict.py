@@ -21,7 +21,7 @@ def var_to_dict():
 ('Thompson' , '1949'),
 ('Burton' , '1939')
 ]
-#arrumar o Page Beck que estão no mesmo ano
+#arrumar var_to_dicto Page Beck que estão no mesmo ano
     best_singer= dict(d)
     for x, y in best_singer.items():
         print(y + " : " + x)
