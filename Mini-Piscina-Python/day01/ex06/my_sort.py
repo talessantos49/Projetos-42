@@ -21,13 +21,19 @@ def my_sort():
     'Thompson'  : '1949',
     'Burton'    : '1939',
 }
-
-    new_dict={}
-    for i in sorted(d, key = d.get):
-        print(i + "\t" ":\t" + d[i])
-    print(new_dict)
-
-
+    new_order = sorted(d.items(), key = lambda item : item[1])
+    k = 0
+    while k < len(new_order):
+        if new_order[k][1] == new_order[k -1][1]:
+            if new_order[k] < new_order[k -1]:
+                temp = new_order[k]
+                new_order[k] = new_order[k -1]
+                new_order[k-1] = temp
+            k += 1
+        else:
+            k += 1
+    for i in new_order:
+        print(i[0])
 
 if __name__=="__main__":
     my_sort()

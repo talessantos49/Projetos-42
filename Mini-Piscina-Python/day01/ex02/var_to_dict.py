@@ -27,7 +27,7 @@ def var_to_dict():
         print(y + " : " + x)
 
     mydict ={}
-    for i in new_dict:
+    for i in best_singer:
         if i[1] in mydict:
             mydict[i[1]] += " " + i[0]
         else:

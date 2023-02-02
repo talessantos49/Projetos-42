@@ -6,7 +6,7 @@
     <title>form.html</title>
 </head>
 <body>
-    <form name="Tales Forms" action="javascript:displayFormContents()">
+    <form name="Tales Forms">
         Firstname:
         <input type="text" id="firstname">
         <br>
@@ -26,12 +26,13 @@
         <input type="checkbox" name="studentChoice" id="student">
         <br>
         Male
-        [i]    Female
+        <input type="radio" name="gender" id="gender_male" value="Male">
+        Female
         <input type="radio" name="gender" id="gender_female" value="Female">
         Other
         <input type="radio" name="gender" id="gender_other" value="Other">
         <br>
-        <input type="submit" value="Run that sexy Javascript!">
+        <input type="button" onclick="displayFormContents()" value="Run that sexy Javascript!">
     </form>
 </body>
 </html>
