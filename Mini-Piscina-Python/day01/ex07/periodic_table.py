@@ -3,23 +3,50 @@ import sys
 def periodic_table():
     periodic_text = open('./periodic_table.txt', 'r')
     only_line = periodic_text.readline().rstrip('\n')
-    # print(only_line)
+    print(only_line)
     splited_line = only_line.split(',')
-    # print(splited_line)
-    if splited_line != '':
-        substance = splited_line[0].split()
-        # print(substance[0])
+    print(splited_line)
+
+    table_html = "<table>"
     while only_line != '':
-        only_line = periodic_text.readline().rstrip('\n')
         splited_line = only_line.split(',')
+        number = splited_line[1].split(':')
+        number = number[1]
+        small = splited_line[2].split(':')
+        small = small[1]
+        molar = splited_line[3].split(':')
+        molar = molar[1]
+        electron = splited_line[4].split(':')
+        electron = electron[1]
         if splited_line != '':
             substance = splited_line[0].split()
-            if substance :
-                pass
-                # print(substance[0])
-        # print(only_line)
-        # print(splited_line)
-    index_arq = open('periodic_table.html', 'w')
+            if substance != '':
+                str_substance = substance[0]
+                str_substance = substance[0]
+                table_html += """
+                <tr>
+                <td style="border: 1px solid black; padding:10px">
+                <h4>"""
+                table_html += str_substance
+                table_html += """</h4>
+                <ul>
+                <li>No """
+                table_html += number
+                table_html += """</li>
+                <li>"""
+                table_html += small
+                table_html += """</li>
+                <li>"""
+                table_html += molar
+                table_html += """</li>
+                <li>"""
+                table_html += electron
+                table_html += """ electron</li>
+                <ul>
+                </td>
+                </tr>
+                """
+        only_line = periodic_text.readline().rstrip('\n')
     html_template = """<!DOCTYPE html>
 <html lang="en">
     <head>
@@ -41,16 +68,11 @@ def periodic_table():
     html_end="""    </body>
 </html>
 """ 
-    # string_substance = substance[0]
-    string_concatenade = html_template + html_end
+    table_html += """</table>"""
+    string_concatenade = html_template + table_html + html_end
+    index_arq = open('periodic_table.html', 'w')
     index_arq.write(string_concatenade)
     index_arq.close()
     
-# def input_tabel(substance, nr, small, mol, electron):
-# def input_table (substance):
-#     str_table = substance[0]
-#     print(str_table)
-#     return str_table
-
 if __name__ =="__main__":
     periodic_table()
