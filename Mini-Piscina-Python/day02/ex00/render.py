@@ -29,26 +29,33 @@ def read_archive():
 def html_template():
     mydict = read_archive()
     new_archive = open("file.html", 'w')
-
-    html_init = f"""<!DOCTYPE html>
+    html_header = """<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-"""
-    html_mid = f"""
-        <title>{mydict["pageTittle"]}</title>
+    """
+
+    if "tittle" in mydict:
+        html_header += f"""\t<title>{mydict["tittle"]}</title>"""
+
+    html_mid ="""
     </head>
-    <body>
-        <p>Name : {mydict["name"]}</p>
-        <p>Surname : {mydict["surname"]}</p>
-        <p>Age : {mydict["age"]}</p>
-        <p>Profession :{mydict["profession"]}</p>
-    </body>
+    <body>"""
+    if "name" in mydict:
+        html_mid += f"""\n\t\t<p>Name : {mydict["name"]}</p>"""
+    if "surname" in mydict:
+        html_mid += f"""\n\t\t<p>Surname : {mydict["surname"]}</p>"""
+    if "age" in mydict:
+        html_mid += f"""\n\t\t<p>Age : {mydict["age"]}</p>"""
+    if "profession" in mydict:
+        html_mid += f"""\n\t\t<p>Profession :{mydict["profession"]}</p>"""
+    html_end = """\n\t</body>
 </html> """
-    html_complete = html_init + html_mid
+    html_complete = html_header + html_mid + html_end
     new_archive.write(html_complete)
     return (html_complete)
 
-html_template()
+if __name__ =="__main__":
+    html_template()
