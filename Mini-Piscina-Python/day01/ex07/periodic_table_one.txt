@@ -1,1 +1,0 @@
-Hydrogen = position:0, number:1, small: H, molar:1.00794, electron:1

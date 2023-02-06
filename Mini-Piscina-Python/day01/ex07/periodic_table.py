@@ -4,11 +4,8 @@ def read_and_convert(periodic_text):
     only_line = periodic_text.readline().rstrip('\n')
     if only_line != '':
         splited_line = only_line.split(',')
-        print(splited_line)
         number = splited_line[1].split(':')
-        print(number)
         number = number[1]
-        print(number)
         small = splited_line[2].split(':')
         small = small[1]
         molar = splited_line[3].split(':')
@@ -54,7 +51,7 @@ def periodic_table():
                 table_html += input_table(list_received)
                 list_received = (read_and_convert(periodic_text))
             else:
-                table_html += f"\n\t\t<td></td>"
+                table_html += "\n\t\t<td></td>"
         table_html += "</tr>"
 
     html_template = """<!DOCTYPE html>
