@@ -1,73 +1,61 @@
 import sys
 
+def read_and_convert(periodic_text):
+    only_line = periodic_text.readline().rstrip('\n')
+    if only_line != '':
+        splited_line = only_line.split(',')
+        print(splited_line)
+        number = splited_line[1].split(':')
+        print(number)
+        number = number[1]
+        print(number)
+        small = splited_line[2].split(':')
+        small = small[1]
+        molar = splited_line[3].split(':')
+        molar = molar[1]
+        electron = splited_line[4].split(':')
+        electron = electron[1]
+        position = splited_line[0].split(':')
+        position = int(position[1])
+        substance = splited_line[0].split()
+        substance = substance[0]
+        returned_list = [substance, position, number, small, molar, electron]
+        return (returned_list)
+    else: return
+
+def input_table(line_listed):
+    str_table = """\t
+        <td style="border: 1px solid black; padding:10px">
+        \t<h4>""" + line_listed[0] + """</h4>
+        \t<ul>
+            \t\t<li>No """+ str(line_listed[1]) +""" </li>
+            \t\t<li> """ + line_listed[2] + """ </li>
+            \t\t<li>""" + line_listed[3] + """ </li>
+            \t\t<li> """ + line_listed[4] + """ </li>
+            \t\t<li> """ + line_listed[5] + """ electron</li>
+        \t</ul>
+        \t</td>
+    """
+    return(str_table)
+
 def periodic_table():
     periodic_text = open('./periodic_table.txt', 'r')
-    only_line = periodic_text.readline().rstrip('\n')
-    print(only_line)
-    splited_line = only_line.split(',')
-    print(splited_line)
-    # dict_element[key] = value
+    index_arq = open('periodic_table.html', 'w')
+    list_received = (read_and_convert(periodic_text))
+    
     table_html = "\t<table>"
-    text_test = "\t<table>"
-    # while only_line != '':
-    splited_line = only_line.split(',')
-    number = splited_line[1].split(':')
-    number = number[1]
-    small = splited_line[2].split(':')
-    small = small[1]
-    molar = splited_line[3].split(':')
-    molar = molar[1]
-    electron = splited_line[4].split(':')
-    electron = electron[1]
-    position = splited_line[0].split(':')
-    position = int(position[1])
-    substance = splited_line[0].split()
-    substance = substance[0]
     collum = 0
-    line = 0
     for index in range(7):
-        text_test += "<tr>"
-        line += 1
+        table_html += "\n\t<tr>"
         if collum == 18:
             collum = 0
         for collum in range(18):
-            if collum == position:
-                text_test += f"""\n\t\t<td style="border: 1px solid black; padding: 10px; border-collapse: collapse"> <h4>{substance}</h4></td>"""
-                # print(k, text_test)
+            if collum == int(list_received[1]):
+                table_html += input_table(list_received)
+                list_received = (read_and_convert(periodic_text))
             else:
-                text_test += f"\n\t\t<td>{collum}</td>"
-        text_test += "</tr>"
-        # print(text_test)
-        # if splited_line != '':
-        #     substance = splited_line[0].split()
-        #     if substance != '':
-        #         str_substance = substance[0]
-        #         str_substance = substance[0]
-    table_html += """
-    <tr>
-        <td style="border: 1px solid black; padding:10px">
-            <h4>"""
-    table_html += substance
-    table_html += """</h4>
-    <ul>
-        <li>No """
-    table_html += number
-    table_html += """ </li>
-        <li>"""
-    table_html += small
-    table_html += """ </li>
-        <li>"""
-    table_html += molar
-    table_html += """ </li>
-        <li>"""
-    table_html += electron
-    table_html += """ electron</li>
-    <ul>
-    </td>
-    </tr>
-            """
-    only_line = periodic_text.readline().rstrip('\n')
-
+                table_html += f"\n\t\t<td></td>"
+        table_html += "</tr>"
 
     html_template = """<!DOCTYPE html>
 <html lang="en">
@@ -76,14 +64,6 @@ def periodic_table():
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Periodic Table</title>
-        <style>
-            table, th, td
-            {
-                border-width: 1px;
-                border-style: solid;
-                border-collapse:collapse;
-            }
-        </style>
     </head>
     <body>
 """
@@ -92,9 +72,8 @@ def periodic_table():
 </html>
 """ 
     table_html += """</table>"""
-    # string_concatenade = html_template + table_html + html_end + text_test
-    string_concatenade = text_test + table_html
-    index_arq = open('periodic_table.html', 'w')
+
+    string_concatenade = html_template + table_html + html_end
     index_arq.write(string_concatenade)
     index_arq.close()
 
