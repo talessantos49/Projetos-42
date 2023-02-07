@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys, os, re
 
 def arguments_validator():
@@ -24,38 +25,17 @@ def read_archive():
     mydict= {}
     for key in settings_text :
         mydict[key.split("=")[0].strip()] = key.split("=")[1].strip().strip("\"")
+    settings_archive.close()
     return (mydict)
 
-def html_template():
+def replace_keys():
     mydict = read_archive()
-    new_archive = open("file.html", 'w')
-    html_header = """<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    """
-
-    if "tittle" in mydict:
-        html_header += f"""\t<title>{mydict["tittle"]}</title>"""
-
-    html_mid ="""
-    </head>
-    <body>"""
-    if "name" in mydict:
-        html_mid += f"""\n\t\t<p>Name : {mydict["name"]}</p>"""
-    if "surname" in mydict:
-        html_mid += f"""\n\t\t<p>Surname : {mydict["surname"]}</p>"""
-    if "age" in mydict:
-        html_mid += f"""\n\t\t<p>Age : {mydict["age"]}</p>"""
-    if "profession" in mydict:
-        html_mid += f"""\n\t\t<p>Profession :{mydict["profession"]}</p>"""
-    html_end = """\n\t</body>
-</html> """
-    html_complete = html_header + html_mid + html_end
-    new_archive.write(html_complete)
-    return (html_complete)
+    new_file = open("file.html", "w" )
+    template_file = open(sys.argv[1], 'r').read()
+    for key, value in mydict.items():
+        template_file = template_file.replace("{" + key + "}", value)
+    new_file.write(template_file)
+    new_file.close()
 
 if __name__ =="__main__":
-    html_template()
+    replace_keys()
