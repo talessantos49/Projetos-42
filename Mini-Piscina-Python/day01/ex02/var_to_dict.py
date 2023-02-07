@@ -21,17 +21,13 @@ def var_to_dict():
 ('Thompson' , '1949'),
 ('Burton' , '1939')
 ]
-#arrumar var_to_dicto Page Beck que estão no mesmo ano
     best_singer= dict(d)
-    for x, y in best_singer.items():
-        print(y + " : " + x)
-
     mydict ={}
-    for i in best_singer:
-        if i[1] in mydict:
-            mydict[i[1]] += " " + i[0]
+    for key, value in best_singer.items():
+        if value in mydict:
+            mydict[value] += " " + key
         else:
-            mydict[i[1]] = i[0]
+            mydict[value] = key
     for x, y in mydict.items():
         print(x + ' : ' + y)
 

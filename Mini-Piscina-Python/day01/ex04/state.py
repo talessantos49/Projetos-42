@@ -26,7 +26,7 @@ def state():
         if sys.argv[1] in new_dict:
             print(new_dict[sys.argv[1]])
         else:
-            print("Unknown capital cities")
+            print("Unknown capital city")
 
 if __name__ =="__main__":
     state()

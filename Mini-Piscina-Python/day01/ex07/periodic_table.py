@@ -73,6 +73,7 @@ def periodic_table():
     string_concatenade = html_template + table_html + html_end
     index_arq.write(string_concatenade)
     index_arq.close()
+    periodic_text.close()
 
 if __name__ =="__main__":
     periodic_table()
