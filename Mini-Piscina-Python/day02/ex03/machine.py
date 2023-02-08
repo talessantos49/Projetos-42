@@ -1,7 +1,7 @@
 from beverages import *
 import random
 
-class CoffeeMachine(HotBeverage):
+class CoffeeMachine:
     counter = 0
     def __init__(self):
         self.name = "coffee machine"
