@@ -29,9 +29,9 @@ def read_archive():
     return (mydict)
 
 def replace_keys():
+    mydict = read_archive()
     archive_name = sys.argv[1].split('.')
     archive_name = archive_name[0] + ".html"
-    mydict = read_archive()
     new_file = open(archive_name, "w" )
     template_file = open(sys.argv[1], 'r').read()
     for key, value in mydict.items():

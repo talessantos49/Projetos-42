@@ -13,11 +13,9 @@ class HotBeverage:
         returned_str += "price : " + str("{:.2f}".format(self.price)) + "\n"
         returned_str += "description : " + self.description()
         return returned_str
-    
 
-
-class Coffe(HotBeverage):
-    def __init__(self, name="coffe", price = 0.50):
+class Coffee(HotBeverage):
+    def __init__(self, name="coffee", price = 0.50):
         super().__init__(name = name, price = price)
     def description(self):
         return "A coffee, to stay awake."
@@ -43,8 +41,8 @@ class Cappuccino(HotBeverage):
 if __name__ == "__main__":
     drink = HotBeverage()
     print(drink, "\n")
-    coffe = Coffe()
-    print(coffe, "\n")
+    coffee = Coffee()
+    print(coffee, "\n")
     tea = Tea()
     print(tea, "\n")
     chocolate = Chocolate()

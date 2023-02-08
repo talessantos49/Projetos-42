@@ -34,7 +34,7 @@ class CoffeeMachine:
             super().__init__("This coffee machine has to be repaired.")
 
 if __name__ == "__main__":
-    menu = [Tea, Coffe, Chocolate, Cappuccino, HotBeverage]
+    menu = [Tea, Coffee, Chocolate, Cappuccino, HotBeverage]
     random_list = random.choices(menu, k = 15)
     try:
         for i in range(15):
