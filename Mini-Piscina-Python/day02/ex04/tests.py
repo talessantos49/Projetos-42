@@ -42,8 +42,7 @@ def test_elem_basics():
 def test_empty_texts():
     assert str(Elem(content=Text(''))) == '<div></div>'
     assert str(Elem(content=[Text(''), Text('')])) == '<div></div>'
-    assert str(Elem(content=[Text('foo'), Text(''), Elem()])) == '<div>\n  foo\
-\n  <div></div>\n</div>'
+    assert str(Elem(content=[Text('foo'), Text(''), Elem()])) == '<div>\n  foo\n  <div></div>\n</div>'
     print('Elem with empty texts : OK.')
 
     
