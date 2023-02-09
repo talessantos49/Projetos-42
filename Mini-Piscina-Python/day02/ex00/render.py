@@ -9,7 +9,12 @@ def arguments_validator():
             print("Error: invalid archive extensions !")
             return (1)
         else:
-            return (0)
+            try:
+                archive_exist = open(extension[0]+".template", 'r')
+                archive_exist.close()
+            except:
+                print("Error: No such file or directory!")
+                exit(0)
     elif len(sys.argv) < 2:
         print("Error: Too few, arguments!")
         return(1)
