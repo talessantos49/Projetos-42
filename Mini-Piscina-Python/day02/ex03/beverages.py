@@ -15,7 +15,7 @@ class HotBeverage:
         return returned_str
 
 class Coffee(HotBeverage):
-    def __init__(self, name="coffee", price = 0.50):
+    def __init__(self, name="coffee", price = 0.40):
         super().__init__(name = name, price = price)
     def description(self):
         return "A coffee, to stay awake."
