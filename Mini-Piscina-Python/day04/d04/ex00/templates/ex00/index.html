@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" Static site generator for Grunt.js and Yeoman. Assemble makes it dead simple to build modular sites, blogs, gh-pages, components and documentation from reusable templates and data.">
+    <meta name="author" content="http://twitter.com/jonschlinkert">
+    <title> EX00: Markdown Cheatsheet </title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/assemble.css">
+    <link rel="stylesheet" href="../assets/css/gist.css">
+
+    <!-- Webfonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+  <script src="../assets/js/html5shiv.js"></script>
+  <script src="../assets/js/respond/respond.min.js"></script>
+<![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../assets/img/light/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/img/light/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/img/light/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/img/light/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/img/light/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/img/light/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/img/light/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/light/apple-touch-icon-76x76.png">
+    <link rel="shortcut icon" href="../assets/img/light/favicon.ico" type="image/x-icon">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      var pluginUrl =
+        '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+      _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+      _gaq.push(['_setAccount', 'UA-33358518-5']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script type="application/ld+json">
+      [{
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Jon Schlinkert",
+        "description": "Co-creator of Assemble.",
+        "url": "https://github.com/jonschlinkert"
+      }, {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Brian Woodward",
+        "description": "Co-creator of Assemble.",
+        "url": "https://github.com/doowb"
+      }]
+    </script>
+  </head>
+  <body style="background: white;" dpythonata-spy="scroll" data-target=".bs-sidebar">
+    <header class="navbar navbar-fixed-top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+    </header>
+    <header class="masthead subhead">
+      <div class="container">
+        <div class="row">
+          <div class="col col-lg-12">
+            <style type="text/css" media="screen">
+              #custom-tweet-button > a {
+                float: right;
+                display: inline-block;
+                padding: 8px 16px 8px 36px;
+                margin: 15px 0 0 0;
+                background: url('https://twitter.com/favicons/favicon.ico') 15px center no-repeat;
+                background-color: transparent;
+                border: none;
+                border-radius: 4px;
+              }
+              #custom-tweet-button > a:hover {
+                background-color: rgba(255, 255, 255, .07);
+              }
+            </style>
+            <div id="custom-tweet-button">
+              <script>
+                ! function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                  }
+                }(document, "script", "twitter-wjs");
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col col-lg-3">
+        </div>
+        <div class="col col-lg-9">
+          <div class="panel panel-docs">
+            <h1>Markdown Cheatsheet</h1> 
+            <blockquote>
+              <p>This cheatsheet is rendered from
+                <a href="https://gist.github.com/jonschlinkert/5854601">a Gist</a> using the
+                <a href="https://github.com/assemble/handlebars-helpers#gist">{{gist}} helper</a>.</p>
+            </blockquote>
+            <p>If you find any issues or have a suggestion for something we can add, please
+              <a href="https://github.com/assemble/assemble-docs/issues">create an issue</a>, or just make a comment on
+              <a href="https://gist.github.com/jonschlinkert/5854601">the Gist</a>. Thanks!</p>
+            <h3 id="grab-this-cheatsheet">Grab this Cheatsheet</h3> 
+            <ul>
+              <li>
+                <a href="https://gist.github.com/jonschlinkert/5854601/download">Download the cheatsheet</a> 
+              </li>
+              <li>Copy this Embed it on your own site: <code>&lt;script src=&quot;https://gist.github.com/jonschlinkert/5854601.js&quot;&gt;&lt;/script&gt;</code>
+              </li>
+              <li>See the
+                <a href="https://github.com/assemble/assemble-docs/blob/master/src/templates/pages/docs/Cheatsheet-Markdown.md.hbs">template for this page</a>.</li>
+            </ul>
+            <p>
+              <br>
+              <br>
+            </p>
+            <script src="https://gist.github.com/5854601.js"></script>
+            <hr>
+            <p>
+              <a href="http://github.com/assemble/assemble-docs/blob/master/templates/pages/docs/Cheatsheet-Markdown.md.hbs">See the template for this page →</a> 
+            </p>
+            <div class="alert">
+              <style type="text/css" media="screen">
+                .alert iframe {
+                  float: right;
+                  margin: 7px -30px 0 0;
+                  vertical-align: text-top;
+                }
+              </style>
+              <iframe src="http://ghbtns.com/github-btn.html?user=assemble&amp;repo=assemble&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+              <iframe src="http://ghbtns.com/github-btn.html?user=assemble&amp;repo=assemble&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+              <p>Find an error?
+                <a class="alert-link" href="https://github.com/assemble/assemble-docs/issues?state=open">Let us know →</a> 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/holder.js"></script>
+    <script src="../assets/js/highlight.js"></script>
+    <script src="../assets/js/showup.js"></script>
+    <script type='text/javascript'>
+      (function(d, t) {
+        var bh = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        bh.type = 'text/javascript';
+        bh.src = '//www.bugherd.com/sidebarv2.js?apikey=fzwbtzyrop9q61cxf8wwsa';
+        s.parentNode.insertBefore(bh, s);
+      })(document, 'script');
+    </script>
+    <script>
+      $().showUp('.navbar');
+    </script>
+  </body>
+</html>
