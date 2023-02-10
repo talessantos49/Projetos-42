@@ -38,6 +38,5 @@ def get_wiki_info(argument):
     info = requests.get(url, params=params)
     return info
 
-
 if __name__== '__main__':
     check_arguments(sys.argv)
