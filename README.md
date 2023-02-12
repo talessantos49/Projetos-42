@@ -32,6 +32,17 @@ All projects made by me I'll bring here and tell for everyone, about what is and
 <div align="left">
   <img src="https://img.shields.io/badge/Projects-Concluded-success"/>
 </div>
+
+<div align="center">
+
+### Phase One
+
+</div>
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/86013047/218306620-3fbadc48-38d4-47a1-9bf5-ae1b66419380.png"/>
+</div>
+
 <div align="center">
   <a href="https://github.com/talessantos49/Projetos-42/tree/main/Libft">
     <img src="https://user-images.githubusercontent.com/86013047/169532214-b6148f09-3e51-4c6d-90be-dd67ba469026.png"/>
@@ -51,6 +62,8 @@ All projects made by me I'll bring here and tell for everyone, about what is and
   </a>
 </div>
 
+---
+
 <div align="left">
   :construction: Projects Under Construction :construction: 
 </div>
@@ -64,3 +77,5 @@ All projects made by me I'll bring here and tell for everyone, about what is and
     <img src="https://user-images.githubusercontent.com/86013047/218304417-d6b2c942-892e-4e31-99c7-4a48c120d2ea.svg" width="150px" />
   </a>
 </div>
+
+
