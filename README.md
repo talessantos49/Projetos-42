@@ -4,7 +4,7 @@
 
 ### What is 42 🛸?
 
-42 is the answer for the wolrd, universe and all the things!(paraphrasing Douglas Adams) School (and a group of crazy people) who works to chance the world, line-by-line. Here, we dont learn how do programs, we learn, how be a better human coder!
+42 is the answer for the world, universe and all the things!(paraphrasing Douglas Adams) School (and a group of crazy people) who works to chance the world, line-by-line. Here, we dont learn how do programs, we learn, how be a better human coder!
 But Tales, what is Human Coder?
 
 Human coder are people who can code solutions to change things to do the life better than yesterday. We learn to saw diferents kinds of the same problem and solve then, and if we need to use code, we use code! 
@@ -37,10 +37,14 @@ All projects made by me I'll bring here and tell for everyone, about what is and
 
 ### Phase One
 
+
 </div>
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/86013047/218306620-3fbadc48-38d4-47a1-9bf5-ae1b66419380.png"/>
+  
+  <img src="https://user-images.githubusercontent.com/86013047/218614378-d20bf7bf-a9f7-4cfa-adab-7c533038830e.png"/>
+
 </div>
 
 <div align="center">
