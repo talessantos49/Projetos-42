@@ -30,29 +30,52 @@ If you want to see more than this, see the [norminette](https://github.com/42sch
 All projects made by me I'll bring here and tell for everyone, about what is and the creation process.
 
 <div align="left">
-<img src="https://img.shields.io/badge/Projects-Concluded-success"/>
+  <img src="https://img.shields.io/badge/Projects-Concluded-success"/>
 </div>
+
 <div align="center">
-<a href="https://github.com/talessantos49/Projetos-42/tree/main/Libft">
-  <img src="https://user-images.githubusercontent.com/86013047/169532214-b6148f09-3e51-4c6d-90be-dd67ba469026.png"/>
-</a>
-<a href="https://github.com/talessantos49/Projetos-42/tree/main/Get_Next_Line">
-  <img src="https://user-images.githubusercontent.com/86013047/197639960-56508b04-d8b1-4198-9702-53354ceab5b1.png"/>
-</a>
-<a href="https://github.com/talessantos49/Projetos-42/tree/main/ft_printf">
-  <img src="https://user-images.githubusercontent.com/86013047/197639951-92b2d15c-033a-4eba-8a7b-b8900975ce6d.png"/>
-</a>
-<img src="https://user-images.githubusercontent.com/86013047/197639938-25a5c368-baa3-4f5a-bc30-b2c7f1f4b490.png"/>
-<a href="https://github.com/talessantos49/Projetos-42/tree/main/So_long">
-  <img src="https://user-images.githubusercontent.com/86013047/197646377-9c7596a4-4a11-4633-8304-69cb0d467997.png"/>
-</a>
-<a href="https://github.com/talessantos49/Projetos-42/tree/main/Pipex">
-  <img src="https://user-images.githubusercontent.com/86013047/212491370-c027b052-c84e-46d8-82d6-21987407563c.png"/>
-</a>
+
+### Phase One
+
 </div>
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/86013047/218306620-3fbadc48-38d4-47a1-9bf5-ae1b66419380.png"/>
+</div>
+
+<div align="center">
+  <a href="https://github.com/talessantos49/Projetos-42/tree/main/Libft">
+    <img src="https://user-images.githubusercontent.com/86013047/169532214-b6148f09-3e51-4c6d-90be-dd67ba469026.png"/>
+  </a>
+  <a href="https://github.com/talessantos49/Projetos-42/tree/main/Get_Next_Line">
+    <img src="https://user-images.githubusercontent.com/86013047/197639960-56508b04-d8b1-4198-9702-53354ceab5b1.png"/>
+  </a>
+  <a href="https://github.com/talessantos49/Projetos-42/tree/main/ft_printf">
+    <img src="https://user-images.githubusercontent.com/86013047/197639951-92b2d15c-033a-4eba-8a7b-b8900975ce6d.png"/>
+  </a>
+  <img src="https://user-images.githubusercontent.com/86013047/197639938-25a5c368-baa3-4f5a-bc30-b2c7f1f4b490.png"/>
+  <a href="https://github.com/talessantos49/Projetos-42/tree/main/So_long">
+    <img src="https://user-images.githubusercontent.com/86013047/197646377-9c7596a4-4a11-4633-8304-69cb0d467997.png"/>
+  </a>
+  <a href="https://github.com/talessantos49/Projetos-42/tree/main/Pipex">
+    <img src="https://user-images.githubusercontent.com/86013047/212491370-c027b052-c84e-46d8-82d6-21987407563c.png"/>
+  </a>
+</div>
+
+---
 
 <div align="left">
   :construction: Projects Under Construction :construction: 
 </div>
 <img src="https://user-images.githubusercontent.com/86013047/212491435-9a77cc9b-2afa-470c-9616-1cea8078e09e.png"/>
+
+<div align="left">
+  🚀 Extracurricular Projects 🚀 
+</div>
+<div align="center">
+  <a href="https://github.com/talessantos49/Projetos-42/tree/main/Mini-Piscina-Python">
+    <img src="https://user-images.githubusercontent.com/86013047/218304417-d6b2c942-892e-4e31-99c7-4a48c120d2ea.svg" width="150px" />
+  </a>
+</div>
+
 
