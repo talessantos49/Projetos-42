@@ -9,12 +9,26 @@ typedef struct s_node{
 
 typedef struct s_stack{
 	t_node *topo;
+    t_node *fundo;
 	int tam;
 } t_stack;
 
 void criar_pilha(t_stack *stackA){
 	stackA->topo = NULL;
+    stackA->fundo = NULL;
 	stackA->tam = 0;
+}
+
+void imprimir_pilha(t_stack *stack, char c){
+	ft_printf("\n-------------- PILHA - ");
+	ft_printf("%c",c);
+	ft_printf(" tam: %d----------------\n", stack->tam);
+	t_node *aux = stack->topo;
+	while (aux){
+		ft_printf("%d\t",aux->data);
+		aux = aux->next;
+	}
+	ft_printf("\n-------------- FIM DA PILHA ---------\n");
 }
 
 void empilhar(t_stack *stack, int value)
@@ -42,41 +56,6 @@ t_node *desempilhar(t_stack *stack){
 	return NULL;
 }
 
-
-// t_node *empilhar(t_node *stack, int value)
-// {
-// 	t_node *new = malloc(sizeof(t_node));
-// 	if(new){
-// 		new->data = value;
-// 		new->next = stack;
-// 		return new;
-// 	}
-// 	else
-// 		ft_printf("\nErro ao alocar memoria...\n");
-// 	return NULL;
-// }
-
-// t_node *desempilhar(t_node **stack){
-// 	if (*stack != NULL){
-// 		t_node *remove = *stack;
-// 		*stack = remove->next;
-// 		return remove;
-// 	}
-// 	else
-// 		ft_printf("\nPilha Vazia!\n");
-// 	return NULL;
-// }
-// void imprimir_pilha(t_node *stack, char c){
-// 	ft_printf("\n-------------- PILHA - ");
-// 	ft_printf("%c",c);
-// 	ft_printf(" ----------------\n");
-// 	while (stack){
-// 		ft_printf("%d\t",stack->data);
-// 		stack = stack->next;
-// 	}
-// 	ft_printf("\n-------------- FIM DA PILHA ---------\n");
-// }
-
 void shift_up(t_stack *stack)
 {
 	t_node *aux = malloc(sizeof(t_node));
@@ -101,23 +80,122 @@ void shift_up(t_stack *stack)
 		ft_printf("Erro ao alocar Memoria!\n");
 }
 
-void rotate_all(t_stack *stackA, t_stack *stackB)
+void shift_up_rr(t_stack *stackA, t_stack *stackB)
 {
 	shift_up(stackA);
 	shift_up(stackB);
 }
+void inserir_no_inicio(t_stack *stack, int num)
+{
+    t_node *new = malloc(sizeof(t_node));
 
-void imprimir_pilha(t_stack *stack, char c){
-	ft_printf("\n-------------- PILHA - ");
-	ft_printf("%c",c);
-	ft_printf(" tam: %d----------------\n", stack->tam);
-	t_node *aux = stack->topo;
-	while (aux){
-		ft_printf("%d\t",aux->data);
-		aux = aux->next;
-	}
-	ft_printf("\n-------------- FIM DA PILHA ---------\n");
+    if(new){
+        new->data = num;
+        new->next = stack->topo;
+        stack->topo = new;
+        stack->tam++;
+    }
+    else
+        ft_printf("erro alocar Memoria!\n");
 }
+void remover_no_fim(t_stack *stack)
+{
+    t_node *new = malloc(sizeof(t_node));
+    t_node *aux = malloc(sizeof(t_node));
+
+    // if (stack->topo){
+    //     t_node *remove = 
+    // }
+    if(new){
+        new->data = 0;
+        new->next = NULL;
+
+        //é o primeiro?
+        if (stack->topo == NULL)
+            stack->topo = new;
+        else{
+            aux = stack->topo;
+            while(aux->next)
+                aux = aux->next;
+            aux->next=new;
+        }
+        stack->tam--;
+    }
+    else
+        ft_printf("Erro ao alocar memoria!\n");
+}
+
+void inserir_no_fim(t_stack *stack, int num)
+{
+    t_node *new = malloc(sizeof(t_node));
+    t_node *aux = malloc(sizeof(t_node));
+
+    if(new){
+        new->data = num;
+        new->next = NULL;
+
+        //é o primeiro?
+        if (stack->topo == NULL)
+            stack->topo = new;
+        else{
+            aux = stack->topo;
+            while(aux->next)
+                aux = aux->next;
+            aux->next=new;
+        }
+        stack->tam++;
+    }
+    else
+        ft_printf("Erro ao alocar memoria!\n");
+}
+
+void shift_down(t_stack *stack)
+{
+	t_node *aux = malloc(sizeof(t_node));
+	t_node *new = malloc(sizeof(t_node));
+
+	if (new){
+		new->data = stack->topo->data;
+		new->next = NULL;
+        desempilhar(stack);
+		//é o primeiro?
+		if (stack->topo == NULL)
+			stack->topo = new;
+		else{
+			aux = stack->topo;
+			while (aux->next)
+				aux = aux->next;
+			aux->next = new;
+		}
+		stack->tam++;
+	}
+	else
+		ft_printf("Erro ao alocar Memoria!\n");
+}
+
+// void inserir_no_fim(t_stack *stack, int num)
+// {
+//     t_node *new = malloc(sizeof(t_node));
+// 	t_node *aux = malloc(sizeof(t_node));
+	
+// 	if (new){
+// 		new->data = value;
+// 		new->next = NULL;
+		
+// 		//é o primeiro?
+// 		if (stack->topo == NULL)
+// 			stack->topo = new;
+// 		else {
+// 			aux = stack->topo;
+// 			while(aux->next)
+// 				aux = aux->next;
+// 			aux->next = new;
+// 		}
+//         stack->tam++;
+// 	}
+// 	else
+// 		ft_printf("Erro ao alocar memoria!\n");
+// }
 
 // void inserir_no_fim(t_node **stack, int value)
 // {
@@ -129,10 +207,10 @@ void imprimir_pilha(t_stack *stack, char c){
 // 		new->next = NULL;
 		
 // 		//é o primeiro?
-// 		if (*list == NULL)
-// 			*list = new;
+// 		if (*stack == NULL)
+// 			*stack = new;
 // 		else {
-// 			aux = *list;
+// 			aux = *stack;
 // 			while(aux->next)
 // 				aux = aux->next;
 // 			aux->next = new;
@@ -140,15 +218,6 @@ void imprimir_pilha(t_stack *stack, char c){
 // 	}
 // 	else
 // 		ft_printf("Erro ao alocar memoria!\n");
-// }
-
-// t_node *swap_ab(t_node *stackA, t_node *stackB)
-// {
-// 	// t_node *remover = NULL;
-
-// 	stackB = empilhar(stackB, stackA->data);
-// 	ft_printf("\n--------------------------------------------------\n");
-// 	return(stackB);
 // }
 
 void push_b(t_stack *stackA, t_stack *stackB){
@@ -204,14 +273,14 @@ int	main()
 	imprimir_pilha(&stackA, 'A');
 	imprimir_pilha(&stackB, 'B');
 	ft_printf("\n****************** Empilhar Stack A ******************\n");
-	empilhar(&stackA, 3);
-	empilhar(&stackA, 2);
 	empilhar(&stackA, 1);
+	empilhar(&stackA, 2);
+	empilhar(&stackA, 3);
 	imprimir_pilha(&stackA, 'A');
 	ft_printf("\n****************** Empilhar Stack B ******************\n");
-	empilhar(&stackB, 5);
 	empilhar(&stackB, 4);
-	empilhar(&stackB, 3);
+	empilhar(&stackB, 5);
+	empilhar(&stackB, 6);
 	imprimir_pilha(&stackA, 'A');
 	imprimir_pilha(&stackB, 'B');
 	ft_printf("\n****************** Push AB ******************\n");
@@ -246,35 +315,35 @@ int	main()
 	shift_up(&stackA);
 	imprimir_pilha(&stackA, 'A');
 
-	ft_printf("\n****************** Rotate AB ******************\n");
+	// ft_printf("\n****************** shift_up_RR ******************\n");
+	// imprimir_pilha(&stackA, 'A');
+	// imprimir_pilha(&stackB, 'B');
+	// shift_up_rr(&stackA, &stackB);
+	// imprimir_pilha(&stackA, 'A');
+	// imprimir_pilha(&stackB, 'B');
+    ft_printf("\n****************** shift_down_RRR ******************\n");
+    shift_down(&stackA);
+    shift_down(&stackB);
 	imprimir_pilha(&stackA, 'A');
 	imprimir_pilha(&stackB, 'B');
-	rotate_all(&stackA, &stackB);
-	imprimir_pilha(&stackA, 'A');
+    ft_printf("\n****************** inserir no inicio ******************\n");
+    inserir_no_inicio(&stackA, 25);
+    inserir_no_inicio(&stackB, 1235);
+   	imprimir_pilha(&stackA, 'A');
 	imprimir_pilha(&stackB, 'B');
-	// t_node *stackA = NULL;
-	// t_node *stackB = NULL;
-	// t_node *remover = NULL;
-	// //push - empilhar;
-	// stackA = empilhar(stackA, 1);
-	// stackA = empilhar(stackA, 2);
-	// stackB = empilhar(stackB, 3);
-	// stackB = empilhar(stackB, 4);
-	// //imprimir pilha
-	// imprimir_pilha(stackA, 'A');
-	// imprimir_pilha(stackB, 'B');
-	// //pop - Desempilhar;
-
-	// stackB = swap_ab(stackA, stackB);  ////consigo alterar a lista da pilha B porém não consigo alterar a lista da pilha A enquanto altero a da Pilha B.
-	// remover = desempilhar(&stackA);
-	// // stackA = desempilhar(&stackA);
-	// imprimir_pilha(stackA, 'A');   
-	// imprimir_pilha(stackB, 'B');
-	// // if (remover){
-	// // 	ft_printf("\nElemento removido com sucesso!\n");
-	// // }
-	// // else
-	// // 	ft_printf("\nSem Nó a remover!\n");
-	// // imprimir_pilha(stackA, 'A');
-	// // imprimir_pilha(stackB, 'B');
+    ft_printf("\n****************** inserir no fim ******************\n");
+    inserir_no_fim(&stackA, 690);
+    inserir_no_fim(&stackB, 18);
+    imprimir_pilha(&stackA, 'A');
+	imprimir_pilha(&stackB, 'B');
+    ft_printf("\n****************** desempulhar ******************\n");
+    desempilhar(&stackA);
+    desempilhar(&stackB);
+    imprimir_pilha(&stackA, 'A');
+	imprimir_pilha(&stackB, 'B');
+    ft_printf("\n****************** Remover no fim ******************\n");
+    remover_no_fim(&stackA);
+    remover_no_fim(&stackB);
+    imprimir_pilha(&stackA, 'A');
+	imprimir_pilha(&stackB, 'B');
 }
