@@ -13,7 +13,7 @@ typedef struct s_stack{
 	int tam;
 } t_stack;
 
-void criar_pilha(t_stack *stackA){
+void create_stack(t_stack *stackA){
 	stackA->first = NULL;
     stackA->last = NULL;
 	stackA->tam = 0;
@@ -297,8 +297,8 @@ int	main()
 	t_stack stackB;
 
 	ft_printf("****************** Criar as Pilhas ******************\n");
-	criar_pilha(&stackA);
-	criar_pilha(&stackB);
+	create_stack(&stackA);
+	create_stack(&stackB);
 	// // imprimir_pilha(&stackA, 'A');
 	// // imprimir_pilha(&stackB, 'B');
 	// // ft_printf("\n****************** Empilhar Stack A ******************\n");

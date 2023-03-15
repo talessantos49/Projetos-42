@@ -74,6 +74,10 @@
 
 #include "../includes/push_swap.h"
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdarg.h>
 
 #define INT_MAX 2147483647
 #define INT_MIN -2147483648
@@ -85,29 +89,8 @@ int	ft_is_space(char c)
 	return (0);
 }
 
-int	ft_atoi_push(const char	*str)
+long long int	ft_atoi_push(const char	*str)
 {
-	// long int	i;
-	// long int	negative;
-	// long int	num;
-
-	// i = 0;
-	// num = 0;
-	// negative = 1;
-	// while (ft_is_space(str[i]))
-	// 	i++;
-	// if (str[i] == '-' || str[i] == '+')
-	// {
-	// 	if (str[i] == '-')
-	// 		negative = -negative;
-	// 	i++;
-	// }
-	// while (str[i] >= '0' && str[i] <= '9')
-	// {
-	// 	num = (num * 10) + str[i] - '0';
-	// 	i++;
-	// }
-	// return (num * negative);
     long long int	result;
 	int				i;
 	int				s;
@@ -137,8 +120,7 @@ int	ft_atoi_push(const char	*str)
 
 int	check_max_min(char *str)
 {
-	const long long	result = ft_atoi_push(str);
-
+	const long long int	result = ft_atoi_push(str);
 	if (result > 2147483647 || result < -2147483648)
 	{
 		write(1, "Error\n", 7);
@@ -170,7 +152,7 @@ void	checkers(char **argv)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (argv[i])
 	{
 		if (check_numbers(argv[i]) == 0)
@@ -180,6 +162,11 @@ void	checkers(char **argv)
 		i++;
 	}
 }
+
+// int duplicated_args(char *str)
+// {
+
+// }
 
 void    check_argv(int argc, char *argv[])
 {
@@ -215,12 +202,11 @@ void    check_argv(int argc, char *argv[])
 }
 
 int    main(int argc, char **argv)
-// int	main()
 {
 
     if (argc < 2)
-        return (ft_printf("Erroo\n"));
-    check_argv(argc, argv);
-    
+        return (ft_printf("1- Error\n"));
+    checkers(argv);
+
     return (0);
 }
