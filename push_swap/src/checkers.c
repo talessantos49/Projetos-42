@@ -74,10 +74,11 @@ int	duplicated_args(int argc, char *argv[])
 {
 	int		i;
 	int		k;
-	char	arguments[argc];
+	char	*arguments;
 
 	i = 1;
-	while (i < argc)
+    arguments = (char *)ft_calloc(sizeof(char) * argc, argc);
+	while (i < argc && arguments)
 	{
 		arguments[i] = ft_atoi_push (argv[i]);
 		k = i;
@@ -86,13 +87,15 @@ int	duplicated_args(int argc, char *argv[])
 			if (arguments[i] == arguments[k - 1])
 			{
 				write(1, "Error\n", 7);
-				return (1);
+                free(arguments);
+				return (0);
 			}
 			k--;
 		}
 		i++;
 	}
-	return (0);
+    free(arguments);
+	return (1);
 }
 
 void	checkers(int argc, char *argv[])
@@ -106,7 +109,7 @@ void	checkers(int argc, char *argv[])
 			exit(0);
 		if (check_max_min(argv[i]) == 0)
 			exit(0);
-		if (duplicated_args(argc, argv) == 1)
+		if (duplicated_args(argc, argv) == 0)
 			exit(0);
 		i++;
 	}
