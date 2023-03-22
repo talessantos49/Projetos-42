@@ -42,6 +42,7 @@ int				ft_isdigit(int c);
 int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+int				ft_is_space(char c);
 char			*ft_strrchr(const char *s, int c);
 int				ft_strncmp(const char *string, const char *stringB, size_t i);
 void			*ft_memset(void *dest, int c, size_t n);

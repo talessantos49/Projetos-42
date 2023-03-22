@@ -12,32 +12,18 @@
 
 #include "../includes/push_swap.h"
 
-long long int	ft_atoi_push(const char	*str)
+int	check_ordenated(int argc, char *argv[])
 {
-	long long int	result;
-	int				i;
-	int				s;
+	int	i;
 
-	s = 1;
 	i = 0;
-	while (str[i] == 32 || (str[i] >= 7 && str[i] <= 13))
-		i++;
-	if ((str[i] == '-' || str[i] == '+')
-		&& (str[i + 1] == '-' || str[i +1] == '+'))
-		return (0);
-	while (str[i] == '+' || str[i] == '-')
+	while (i < argc - 1)
 	{
-		if (str[i] == '-')
-			s = -1;
+		if (ft_atoi_push(argv[i]) > ft_atoi_push(argv[i + 1]))
+			return (1);
 		i++;
 	}
-	result = 0;
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		result = (result * 10) + (str[i] - '0');
-		i++;
-	}
-	return (s * result);
+	return (0);
 }
 
 int	check_max_min(char *str)
@@ -72,17 +58,17 @@ int	check_numbers(char *str)
 
 int	duplicated_args(int argc, char *argv[])
 {
-	int		i;
-	int		k;
-	char	*arguments;
+	int				i;
+	int				k;
+	long long int	*arguments;
 
 	i = 1;
-    arguments = (char *)ft_calloc(sizeof(char) * argc, argc);
+    arguments = (long long int *)ft_calloc(sizeof(int) * argc, argc);
 	while (i < argc && arguments)
 	{
 		arguments[i] = ft_atoi_push (argv[i]);
 		k = i;
-		while (k != 0)
+		while (k != 1)
 		{
 			if (arguments[i] == arguments[k - 1])
 			{
@@ -109,8 +95,10 @@ void	checkers(int argc, char *argv[])
 			exit(0);
 		if (check_max_min(argv[i]) == 0)
 			exit(0);
-		if (duplicated_args(argc, argv) == 0)
-			exit(0);
 		i++;
 	}
+	if (duplicated_args(argc, argv) == 0)
+		exit(0);
+	if (check_ordenated(argc, argv) == 0)
+		exit(0);
 }

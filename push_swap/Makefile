@@ -21,6 +21,7 @@ SOURCES_LIST	= push_swap.c \
 				checkers.c \
 				movimentsA.c \
 				movimentsB.c \
+				movimentsGeneral.c \
 				stacks.c
 
 GREEN			= \033[0;32m
@@ -76,7 +77,7 @@ dance_duck:
 			${CC} ${CFLAGS} ${SOURCES} ${DOT_A} ${LIBFT}
 
 valgrind:
-	$(VALGRIND) ./${NAME} 1 2 4 3 5
+	$(VALGRIND) ./${NAME} 1 2 3 5
 
 clean:
 			make -sC ${LIBFT_DIR} clean

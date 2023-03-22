@@ -30,22 +30,27 @@ typedef struct s_stack{
 } t_stack;
 
 long long int	ft_atoi_push(const char	*str);
+int             check_ordenated(int argc, char *argv[]);
 int	            check_max_min(char *str);
 int	            check_numbers(char *str);
 int             duplicated_args(int argc, char *argv[]);
 void	        checkers(int argc, char *argv[]);
-void            push_b(t_stack *stackA, t_stack *stackB);
 void            push_a(t_stack *stackA, t_stack *stackB);
-void            swap(t_stack *stackA);
-void            swap_ab(t_stack *stackA, t_stack *stackB);
-void            shift_down(t_stack *stack);
-void            shift_down_rr(t_stack *stackA, t_stack *stackB);
-void            stack_up(t_stack *stack, int value);
-void            remove_list(t_stack *stack, int valor);
+void            swap_a(t_stack *stackA);
+void            shift_down_rra(t_stack *stack);
+void            shift_up_ra(t_stack *stack);
+void            push_b(t_stack *stackA, t_stack *stackB);
+void            swap_b(t_stack *stackB);
+void            shift_down_rrb(t_stack *stack);
+void            shift_up_rb(t_stack *stack);
 void            shift_up(t_stack *stack);
 void            shift_up_rr(t_stack *stackA, t_stack *stackB);
-void            insert_up(t_stack *stack, int num);
+void            swap_ss(t_stack *stackA, t_stack *stackB);
+void            shift_down_rrr(t_stack *stackA, t_stack *stackB);
 void            create_stack(t_stack *stack);
+void            remove_list(t_stack *stack, int valor);
+void            stack_up(t_stack *stack, int value);
+void            insert_up(t_stack *stack, int num);
 t_node          *unstack(t_stack *stack);
 
 #endif
