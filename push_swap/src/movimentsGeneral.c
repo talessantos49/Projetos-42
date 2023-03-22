@@ -29,9 +29,7 @@ void shift_up(t_stack *stack)
 				aux = aux->next;
 			aux->next = new;
 		}
-		stack->tam++;
-        free(aux);
-        free(new);
+		stack->len++;
 	}
 	else
 		write(1, "Error\n", 7);

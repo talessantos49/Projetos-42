@@ -26,7 +26,7 @@ typedef struct s_node{
 typedef struct s_stack{
 	t_node *first;
     t_node *last;
-	int tam;
+	int len;
 } t_stack;
 
 long long int	ft_atoi_push(const char	*str);
@@ -52,5 +52,7 @@ void            remove_list(t_stack *stack, int valor);
 void            stack_up(t_stack *stack, int value);
 void            insert_up(t_stack *stack, int num);
 t_node          *unstack(t_stack *stack);
+void            sort_two(t_stack *stackA);
+void            sort_three(t_stack *stackA);
 
 #endif

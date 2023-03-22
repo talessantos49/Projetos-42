@@ -15,7 +15,7 @@
 void create_stack(t_stack *stack){
 	stack->first = NULL;
     stack->last = NULL;
-	stack->tam = 0;
+	stack->len = 0;
 }
 
 void remove_list(t_stack *stack, int valor){
@@ -41,7 +41,7 @@ void remove_list(t_stack *stack, int valor){
 	}
 	if (node_remove){
 		free(node_remove);
-		stack->tam--;
+		stack->len--;
 	}
 }
 
@@ -52,7 +52,7 @@ void stack_up(t_stack *stack, int value)
 		new->data = value;
 		new->next = stack->first;
 		stack->first = new;
-		stack->tam++;
+		stack->len++;
 	}
 	else
 		write(1, "Error\n", 7);
@@ -73,7 +73,7 @@ void insert_up(t_stack *stack, int num)
 			new->next = stack->first;
 			stack->first = new;
 		}
-        stack->tam++;
+        stack->len++;
     }
     else
 		write(1, "Error\n", 7);
@@ -83,7 +83,7 @@ t_node *unstack(t_stack *stack){
 	if (stack->first){
 		t_node *remove = stack->first;
 		stack->first = remove->next;
-		stack->tam--;
+		stack->len--;
 		return remove;
 	}
 	return NULL;

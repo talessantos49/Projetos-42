@@ -1,14 +1,40 @@
-==1911== Memcheck, a memory error detector
-==1911== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1911== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==1911== Command: ./push_swap 1 2 3 5
-==1911== Parent PID: 1910
-==1911== 
-==1911== 
-==1911== HEAP SUMMARY:
-==1911==     in use at exit: 0 bytes in 0 blocks
-==1911==   total heap usage: 2 allocs, 2 frees, 50 bytes allocated
-==1911== 
-==1911== All heap blocks were freed -- no leaks are possible
-==1911== 
-==1911== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==2561== Memcheck, a memory error detector
+==2561== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2561== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==2561== Command: ./push_swap 1 20 3 5
+==2561== Parent PID: 2560
+==2561== 
+==2561== Invalid read of size 1
+==2561==    at 0x1091B3: ft_atoi_push (push_swap.c:24)
+==2561==    by 0x1092B0: initial_stack (push_swap.c:49)
+==2561==    by 0x1093F0: main (push_swap.c:76)
+==2561==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==2561== 
+==2561== 
+==2561== Process terminating with default action of signal 11 (SIGSEGV)
+==2561==  Access not within mapped region at address 0x0
+==2561==    at 0x1091B3: ft_atoi_push (push_swap.c:24)
+==2561==    by 0x1092B0: initial_stack (push_swap.c:49)
+==2561==    by 0x1093F0: main (push_swap.c:76)
+==2561==  If you believe this happened as a result of a stack
+==2561==  overflow in your program's main thread (unlikely but
+==2561==  possible), you can try to increase the size of the
+==2561==  main thread stack using the --main-stacksize= flag.
+==2561==  The main thread stack size used in this run was 8388608.
+==2561== 
+==2561== HEAP SUMMARY:
+==2561==     in use at exit: 0 bytes in 0 blocks
+==2561==   total heap usage: 5 allocs, 5 frees, 196 bytes allocated
+==2561== 
+==2561== All heap blocks were freed -- no leaks are possible
+==2561== 
+==2561== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==2561== 
+==2561== 1 errors in context 1 of 1:
+==2561== Invalid read of size 1
+==2561==    at 0x1091B3: ft_atoi_push (push_swap.c:24)
+==2561==    by 0x1092B0: initial_stack (push_swap.c:49)
+==2561==    by 0x1093F0: main (push_swap.c:76)
+==2561==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==2561== 
+==2561== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
