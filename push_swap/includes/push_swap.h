@@ -54,5 +54,11 @@ void            insert_up(t_stack *stack, int num);
 t_node          *unstack(t_stack *stack);
 void            sort_two(t_stack *stackA);
 void            sort_three(t_stack *stackA);
+void			sort_four(t_stack *stackA, t_stack *stackB);
+void			sort_five(t_stack *stackA, t_stack *stackB);
+void			push_three(t_stack *stackA, t_stack *stackB);
+void			insert_down(t_stack *stack, int num);
+void			remove_last(t_stack *stack, int valor);
+void imprimir_pilha(t_stack *stack, char c);
 
 #endif

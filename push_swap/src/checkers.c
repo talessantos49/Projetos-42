@@ -6,7 +6,7 @@
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 10:36:29 by marvin            #+#    #+#             */
-/*   Updated: 2023/03/20 14:48:57 by tasantos         ###   ########.fr       */
+/*   Updated: 2023/04/03 19:34:44 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	check_ordenated(int argc, char *argv[])
 int	check_max_min(char *str)
 {
 	const long long int	result = ft_atoi_push(str);
+
 	if (result > 2147483647 || result < -2147483648)
 	{
 		write(1, "Error\n", 7);
@@ -63,7 +64,7 @@ int	duplicated_args(int argc, char *argv[])
 	long long int	*arguments;
 
 	i = 1;
-    arguments = (long long int *)ft_calloc(sizeof(int) * argc, argc);
+	arguments = (long long int *)ft_calloc(sizeof(int) * argc, argc);
 	while (i < argc && arguments)
 	{
 		arguments[i] = ft_atoi_push (argv[i]);
@@ -73,14 +74,14 @@ int	duplicated_args(int argc, char *argv[])
 			if (arguments[i] == arguments[k - 1])
 			{
 				write(1, "Error\n", 7);
-                free(arguments);
+				free(arguments);
 				return (0);
 			}
 			k--;
 		}
 		i++;
 	}
-    free(arguments);
+	free(arguments);
 	return (1);
 }
 
