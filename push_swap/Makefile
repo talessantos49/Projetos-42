@@ -6,7 +6,7 @@
 #    By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 17:15:41 by tasantos          #+#    #+#              #
-#    Updated: 2023/01/08 05:39:28 by tasantos         ###   ########.fr        #
+#    Updated: 2023/04/18 02:15:05 by tasantos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,12 @@ SOURCES_LIST	= push_swap.c \
 				movimentsB.c \
 				movimentsGeneral.c \
 				stacks.c \
-				sort.c
+				sort.c	\
+				sort_five.c	\
+				liners.c \
+				stacksA.c \
+				extras.c \
+				quick_sort.c
 
 GREEN			= \033[0;32m
 
@@ -42,17 +47,23 @@ LIBFT_HEADERS	= ${LIBFT_DIR}includes/
 LIBFT			= ${LIBFT_DIR}libft.a
 
 CC				= gcc
-CFLAGS			= -Wall -Werror -Wextra -g
+CFLAGS			= 
+# CFLAGS			= -Wall -Werror -Wextra -g
 
 RM 				= rm -f
 
 # VALGRIND		= @valgrind --leak-check=full --show-leak-kinds=all \
 # --track-origins=yes --quiet --tool=memcheck --keep-debuginfo=yes --verbose \
-# --trace-children=yes --track-fds=yes \ --log-file=valgrind-out.txt
+# --trace-children=yes --track-fds=yes --log-file=valgrind-out.txt
 
-VALGRIND 		= @valgrind --leak-check=full --show-leak-kinds=all \
---track-origins=yes --trace-children=yes --log-file=valgrind-out.txt -s
-# #--track-origins=yes --trace-children=yes --log-file=valgrind-out.txt -s
+# VALGRIND 		= @valgrind --leak-check=full --show-leak-kinds=all \
+# --track-origins=yes --trace-children=yes --log-file=valgrind-out.txt -s
+# # #--track-origins=yes --trace-children=yes --log-file=valgrind-out.txt -s
+
+VALGRIND		= @valgrind --leak-check=full --show-leak-kinds=all \
+--track-origins=yes --quiet --tool=memcheck --keep-debuginfo=yes --verbose -s\
+--log-file=valgrind-out.txt
+
 
 all:			${NAME}
 #				@clear
@@ -77,8 +88,11 @@ ${LIBFT}:
 dance_duck:
 			${CC} ${CFLAGS} ${SOURCES} ${DOT_A} ${LIBFT}
 
-valgrind:
-	$(VALGRIND) ./${NAME} 1 20 3 5
+valgrind: ${NAME}
+	$(VALGRIND) ./${NAME} 2 5 6 1 8 3
+
+teste:	${NAME}
+	./${NAME} 2 5 6 1 0 8 4 7 9 3 | ./checker_linux 2 5 6 1 8
 
 clean:
 			make -sC ${LIBFT_DIR} clean

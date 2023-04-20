@@ -6,7 +6,7 @@
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 22:33:00 by tasantos          #+#    #+#             */
-/*   Updated: 2023/04/11 03:16:09 by tasantos         ###   ########.fr       */
+/*   Updated: 2023/04/17 18:50:11 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,44 @@ long long int	ft_atoi_push(const char	*str)
 	return (num * negative);
 }
 
-void	initial_stack(t_stack *stacka, int argc, char *argv[])
+void	free_all(t_stack *stacka, t_stack *stackb)
 {
-	long long int	value;
-	int				i;
+	if (stacka->first)
+		free_stack(stacka);
+	if (stackb->first)
+		free_stack(stackb);
+}
 
-	i = 1;
-	value = 0;
-	while (i < argc)
+void	free_stack(t_stack *stack)
+{
+	t_node	*aux;
+	t_node	*last;
+
+	aux = NULL;
+	last = NULL;
+	if (stack->first->next == NULL)
+		free(stack->first);
+	else
+	{		
+		aux = stack->first->next;
+		free(stack->first);
+		stack->first = aux;
+		free_stack(stack);
+	}
+	free(last);
+}
+
+void	free_node(t_node *node)
+{
+	t_node	*node_temp;
+
+	if (node)
+		return ;
+	while (node)
 	{
-		value = ft_atoi_push(argv[i]);
-		insert_down(stacka, value);
-		i++;
+		node_temp = node->next;
+		free(node);
+		node = node_temp;
 	}
 }
 
@@ -63,6 +89,7 @@ int	main(int argc, char **argv)
 	create_stack(&stacka);
 	create_stack(&stackb);
 	initial_stack(&stacka, argc, argv);
+	bigest_number(&stacka);
 	if (argc == 3)
 		sort_two(&stacka);
 	else if (argc == 4)
@@ -71,18 +98,8 @@ int	main(int argc, char **argv)
 		sort_four(&stacka, &stackb);
 	else if (argc == 6)
 		sort_five(&stacka, &stackb);
+	else
+		quick_sort(&stacka, &stackb);
+	free_all(&stacka, &stackb);
 	return (0);
 }
-/*
-void imprimir_pilha(t_stack *stacka)
-{
-	t_node *aux;
-	
-	aux = stacka->first;
-    while(aux)
-	{
-		ft_printf("[%d]->", aux->data);
-		aux = aux->next;
-	}
-    ft_printf("\n-----------------------------\n");
-}*/

@@ -6,7 +6,7 @@
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:37:59 by tasantos          #+#    #+#             */
-/*   Updated: 2022/10/05 23:51:29 by tasantos         ###   ########.fr       */
+/*   Updated: 2023/04/03 19:27:22 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdio.h>
-
 
 int				ft_atoi(const char *str);
 void			ft_bzero(void *dest, size_t num);

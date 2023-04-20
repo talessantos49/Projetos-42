@@ -6,7 +6,7 @@
 /*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 10:53:04 by marvin            #+#    #+#             */
-/*   Updated: 2023/04/11 02:53:49 by tasantos         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:56:26 by tasantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,106 +17,76 @@ void	create_stack(t_stack *stack)
 	stack->first = NULL;
 	stack->last = NULL;
 	stack->len = 0;
+	stack->size = 0;
+	stack->bit_size = 0;
+	stack->list_size = 0;
 }
 
-void	remove_list(t_stack *stack, int valor)
+void remove_list(t_stack *stack, int value)
 {
-	t_node	*outset;
-	t_node	*node_remove;
+    if (!stack->first)
+        return;
 
-	outset = stack->first;
-	node_remove = NULL;
-	if (outset != NULL && stack->first->data == valor)
+    t_node *node = stack->first;
+    t_node *prev = NULL;
+
+    while (node && node->data != value)
 	{
-		node_remove = stack->first;
-		stack->first = node_remove->next;
-		if (stack->first == NULL)
-			stack->last = NULL;
-	}
+        prev = node;
+        node = node->next;
+    }
+    if (!node)
+        return;
+    if (node == stack->first)
+        stack->first = node->next; 
+	else if (node == stack->last)
+	{
+        stack->last = prev;
+        prev->next = NULL;
+    }
 	else
-	{
-		while (outset != NULL && outset->next != NULL
-			&& outset->next->data != valor)
-			outset = outset->next;
-		if (outset != NULL && outset->next != NULL)
-		{
-			node_remove = outset->next;
-			outset->next = node_remove->next;
-			if (outset->next == NULL)
-				stack->last = outset;
-		}
-	}
-	if (node_remove)
-	{
-		free(node_remove);
-		stack->len--;
-	}
+        prev->next = node->next;
+    free(node);
 }
 
 void	insert_up(t_stack *stack, int num)
 {
 	t_node	*new;
 
-	new = malloc(sizeof(t_node));
-	if (new)
-	{
-		new->data = num;
-		if (stack->first == NULL)
-		{
-			new->next = NULL;
-			stack->first = new;
-			stack->last = new;
-		}
-		else
-		{
-			new->next = stack->first->next;
-			stack->first = new;
-		}
-		stack->len++;
-	}
-	else
-		write(1, "Error\n", 7);
+	new = create_node(num);
+	if (!new)
+		return ;
+	if (stack->first == NULL)
+		stack->last = new;
+	new->next = stack->first;
+	stack->first = new;
 }
 
-void	insert_down(t_stack *stack, int num)
+void	add_node(t_stack *stack, t_node *new)
+{
+	if (stack->first == NULL)
+	{
+		stack->first = new;
+		stack->last = new;
+	}
+	else
+	{
+		stack->last->next = new;
+		stack->last = new;
+	}
+}
+
+t_node	*create_node(int num)
 {
 	t_node	*new;
-	t_node	*aux;
 
 	new = malloc(sizeof(t_node));
 	if (new)
 	{
 		new->data = num;
-		if (stack->first == NULL)
-		{
-			new->next = NULL;
-			stack->first = new;
-			stack->last = new;
-		}
-		else
-		{
-			aux = stack->first;
-			while (aux->next)
-				aux = aux->next;
-			aux->next = new;
-			stack->last = new;
-		}
-		stack->len++;
+		new->next = NULL;
 	}
 	else
 		write(1, "Error\n", 7);
-}
-
-t_node	*unstack(t_stack *stack)
-{
-	t_node	*remove;
-
-	if (stack->first)
-	{
-		remove = stack->first;
-		stack->first = remove->next;
-		stack->len--;
-		return (remove);
-	}
-	return (NULL);
+	return (new);
 }

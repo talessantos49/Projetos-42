@@ -1,40 +1,335 @@
-==2561== Memcheck, a memory error detector
-==2561== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2561== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==2561== Command: ./push_swap 1 20 3 5
-==2561== Parent PID: 2560
-==2561== 
-==2561== Invalid read of size 1
-==2561==    at 0x1091B3: ft_atoi_push (push_swap.c:24)
-==2561==    by 0x1092B0: initial_stack (push_swap.c:49)
-==2561==    by 0x1093F0: main (push_swap.c:76)
-==2561==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==2561== 
-==2561== 
-==2561== Process terminating with default action of signal 11 (SIGSEGV)
-==2561==  Access not within mapped region at address 0x0
-==2561==    at 0x1091B3: ft_atoi_push (push_swap.c:24)
-==2561==    by 0x1092B0: initial_stack (push_swap.c:49)
-==2561==    by 0x1093F0: main (push_swap.c:76)
-==2561==  If you believe this happened as a result of a stack
-==2561==  overflow in your program's main thread (unlikely but
-==2561==  possible), you can try to increase the size of the
-==2561==  main thread stack using the --main-stacksize= flag.
-==2561==  The main thread stack size used in this run was 8388608.
-==2561== 
-==2561== HEAP SUMMARY:
-==2561==     in use at exit: 0 bytes in 0 blocks
-==2561==   total heap usage: 5 allocs, 5 frees, 196 bytes allocated
-==2561== 
-==2561== All heap blocks were freed -- no leaks are possible
-==2561== 
-==2561== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
-==2561== 
-==2561== 1 errors in context 1 of 1:
-==2561== Invalid read of size 1
-==2561==    at 0x1091B3: ft_atoi_push (push_swap.c:24)
-==2561==    by 0x1092B0: initial_stack (push_swap.c:49)
-==2561==    by 0x1093F0: main (push_swap.c:76)
-==2561==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==2561== 
-==2561== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==1424== Memcheck, a memory error detector
+==1424== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1424== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1424== Command: ./push_swap 2 5 6 1 8 3
+==1424== Parent PID: 1392
+==1424== 
+==1424== Invalid read of size 8
+==1424==    at 0x10AA8E: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f158 is 8 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109907: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA5D: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109FD8: create_node (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10A697: insert_down (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10A75E: initial_stack (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1093EA: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== Invalid read of size 8
+==1424==    at 0x10AA47: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f1a8 is 8 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109913: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA5D: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109FD8: create_node (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10A697: insert_down (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10A75E: initial_stack (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1093EA: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== Invalid read of size 4
+==1424==    at 0x10AA77: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f1f0 is 0 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109913: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA5D: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109FD8: create_node (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10A697: insert_down (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10A75E: initial_stack (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1093EA: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== Invalid read of size 4
+==1424==    at 0x10AA3C: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f510 is 0 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109907: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA37: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109B70: shift_up (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1099A2: shift_up_ra (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA89: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== Invalid read of size 8
+==1424==    at 0x10AA47: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f518 is 8 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109907: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA37: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109B70: shift_up (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1099A2: shift_up_ra (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA89: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== Invalid read of size 4
+==1424==    at 0x10AA4B: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f740 is 0 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109913: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA37: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109B70: shift_up (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1099A2: shift_up_ra (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA89: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== Invalid read of size 4
+==1424==    at 0x10AA77: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f510 is 0 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109907: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA37: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109B70: shift_up (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1099A2: shift_up_ra (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA89: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== Invalid read of size 8
+==1424==    at 0x10AB36: quick_insert (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10ABA0: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f608 is 8 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109F04: remove_list (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109BAD: shift_up (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109B29: shift_up_rb (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB22: quick_insert (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10ABA0: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109FD8: create_node (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109F29: insert_up (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1099F2: push_b (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA70: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== 
+==1424== HEAP SUMMARY:
+==1424==     in use at exit: 0 bytes in 0 blocks
+==1424==   total heap usage: 34 allocs, 34 frees, 724 bytes allocated
+==1424== 
+==1424== All heap blocks were freed -- no leaks are possible
+==1424== 
+==1424== ERROR SUMMARY: 21 errors from 8 contexts (suppressed: 0 from 0)
+==1424== 
+==1424== 1 errors in context 1 of 8:
+==1424== Invalid read of size 4
+==1424==    at 0x10AA77: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f510 is 0 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109907: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA37: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109B70: shift_up (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1099A2: shift_up_ra (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA89: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== 
+==1424== 1 errors in context 2 of 8:
+==1424== Invalid read of size 4
+==1424==    at 0x10AA4B: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f740 is 0 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109913: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA37: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109B70: shift_up (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1099A2: shift_up_ra (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA89: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== 
+==1424== 1 errors in context 3 of 8:
+==1424== Invalid read of size 8
+==1424==    at 0x10AA47: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f518 is 8 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109907: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA37: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109B70: shift_up (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1099A2: shift_up_ra (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA89: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== 
+==1424== 1 errors in context 4 of 8:
+==1424== Invalid read of size 4
+==1424==    at 0x10AA3C: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f510 is 0 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109907: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA37: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AAB2: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109B70: shift_up (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1099A2: shift_up_ra (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA89: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== 
+==1424== 2 errors in context 5 of 8:
+==1424== Invalid read of size 4
+==1424==    at 0x10AA77: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f1f0 is 0 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109913: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA5D: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109FD8: create_node (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10A697: insert_down (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10A75E: initial_stack (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1093EA: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== 
+==1424== 4 errors in context 6 of 8:
+==1424== Invalid read of size 8
+==1424==    at 0x10AA47: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f1a8 is 8 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109913: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA5D: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109FD8: create_node (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10A697: insert_down (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10A75E: initial_stack (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1093EA: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== 
+==1424== 5 errors in context 7 of 8:
+==1424== Invalid read of size 8
+==1424==    at 0x10AB36: quick_insert (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10ABA0: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f608 is 8 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109F04: remove_list (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109BAD: shift_up (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109B29: shift_up_rb (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB22: quick_insert (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10ABA0: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109FD8: create_node (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109F29: insert_up (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1099F2: push_b (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA70: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== 
+==1424== 6 errors in context 8 of 8:
+==1424== Invalid read of size 8
+==1424==    at 0x10AA8E: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Address 0x4a4f158 is 8 bytes inside a block of size 16 free'd
+==1424==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109907: swap_a (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AA5D: pivot (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10AB8D: quick_sort (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x109467: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==  Block was alloc'd at
+==1424==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1424==    by 0x109FD8: create_node (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10A697: insert_down (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x10A75E: initial_stack (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424==    by 0x1093EA: main (in /mnt/c/Users/tales/Desktop/workspace/Projetos-42/push_swap/push_swap)
+==1424== 
+==1424== ERROR SUMMARY: 21 errors from 8 contexts (suppressed: 0 from 0)
