@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movimentsA.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 10:59:12 by marvin            #+#    #+#             */
-/*   Updated: 2023/04/17 15:46:41 by tasantos         ###   ########.fr       */
+/*   Updated: 2023/04/21 21:13:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,19 @@ void	push_a(t_stack *stackA, t_stack *stackB)
 
 void	swap_a(t_stack *stackA)
 {
-	t_node	*aux1;
-	t_node	*aux2;
+	int		data1;
+	int		data2;
 
-	aux1 = unstack(stackA);
-	aux2 = unstack(stackA);
-	insert_up(stackA, aux1->data);
-	insert_up(stackA, aux2->data);
-	free(aux1);
-	free(aux2);
+	if (stackA->first == NULL || stackA->first->next == NULL)
+		return ;
+	if (stack_len(stackA) < 2)
+		return ;
+	data1 = stackA->first->data;
+	data2 = stackA->first->next->data;
+	remove_list(stackA, data1);
+	remove_list(stackA, data2);
+	insert_up(stackA, data1);
+	insert_up(stackA, data2);
 	write(1, "sa\n", 3);
 }
 

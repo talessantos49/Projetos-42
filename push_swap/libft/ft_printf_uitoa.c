@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_uitoa_len(unsigned int n)
+size_t	ft_uitoa_len(int n)
 {
 	int	len;
 
@@ -32,7 +32,7 @@ size_t	ft_uitoa_len(unsigned int n)
 	return (len);
 }
 
-int	ft_uitoa(unsigned int n)
+int	ft_uitoa(int n)
 {
 	int		len;
 	char	*str;

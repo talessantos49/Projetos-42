@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 17:15:41 by tasantos          #+#    #+#              #
-#    Updated: 2023/04/18 02:15:05 by tasantos         ###   ########.fr        #
+#    Updated: 2023/04/21 20:42:39 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,8 +47,8 @@ LIBFT_HEADERS	= ${LIBFT_DIR}includes/
 LIBFT			= ${LIBFT_DIR}libft.a
 
 CC				= gcc
-CFLAGS			= 
-# CFLAGS			= -Wall -Werror -Wextra -g
+# CFLAGS			= -g
+CFLAGS			= -Wall -Werror -Wextra -g
 
 RM 				= rm -f
 
@@ -89,7 +89,7 @@ dance_duck:
 			${CC} ${CFLAGS} ${SOURCES} ${DOT_A} ${LIBFT}
 
 valgrind: ${NAME}
-	$(VALGRIND) ./${NAME} 2 5 6 1 8 3
+	$(VALGRIND) ./${NAME} 4 1 2 9 11 5 8 3 12 6 10 7 
 
 teste:	${NAME}
 	./${NAME} 2 5 6 1 0 8 4 7 9 3 | ./checker_linux 2 5 6 1 8

@@ -56,9 +56,9 @@ long long int	ft_len_hex(unsigned long int nbr);
 int				ft_dec_to_hex_ptr(unsigned long long int dec,
 					int total, char *hex_adress);
 int				ft_print_pointer(unsigned long int hex);
-int				ft_uitoa(unsigned int n);
+int				ft_uitoa(int n);
 long long int	ft_print_i_d(int n);
-size_t			ft_uitoa_len(unsigned int n);
+size_t			ft_uitoa_len(int n);
 long long int	ft_putstr(char *s);
 int				ft_putchar(char c);
 void			ft_putstr_itoa(char	*str);

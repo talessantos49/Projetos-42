@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:50:08 by tasantos          #+#    #+#             */
-/*   Updated: 2023/04/18 02:23:17 by tasantos         ###   ########.fr       */
+/*   Updated: 2023/04/21 20:57:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,6 @@ int				bigest_number(t_stack *stack);
 int				lowest_number(t_stack *stack);
 void			quick_sort(t_stack *stacka, t_stack *stackb);
 void			pivot(t_stack *stacka, t_stack *stackb);
+int				stack_len(t_stack *stack);
+
 #endif

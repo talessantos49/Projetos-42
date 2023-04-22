@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movimentsB.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tasantos <tasantos@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 11:32:33 by marvin            #+#    #+#             */
-/*   Updated: 2023/04/17 15:47:56 by tasantos         ###   ########.fr       */
+/*   Updated: 2023/04/21 21:41:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,31 @@ void	push_b(t_stack *stackA, t_stack *stackB)
 	write(1, "pb\n", 3);
 }
 
-void	swap_b(t_stack *stackB)
+void	swap_b(t_stack *stackb)
 {
-	t_node	*aux1;
-	t_node	*aux2;
+	int		data1;
+	int		data2;
 
-	aux1 = NULL;
-	aux2 = NULL;
-	aux1 = unstack(stackB);
-	aux2 = unstack(stackB);
-	stack_up(stackB, aux1);
-	stack_up(stackB, aux2);
+	if (stackb->first == NULL || stackb->first->next == NULL)
+		return ;
+	if (stack_len(stackb) < 2)
+		return ;
+	data1 = stackb->first->data;
+	data2 = stackb->first->next->data;
+	remove_list(stackb, data1);
+	remove_list(stackb, data2);
+	insert_up(stackb, data1);
+	insert_up(stackb, data2);
 	write(1, "sb\n", 3);
 }
 
 void	shift_down_rrb(t_stack *stack)
 {
 	int		aux;
-	t_node	*aux1;
+	// t_node	*aux1;
 
 	aux = last_number(stack);
-	aux1 = last_node(stack);
+	// aux1 = last_node(stack);
 	remove_list(stack, aux);
 	insert_up(stack, aux);
 	write(1, "rrb\n", 4);
