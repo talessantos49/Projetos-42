@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 22:33:00 by tasantos          #+#    #+#             */
-/*   Updated: 2023/04/21 21:40:12 by marvin           ###   ########.fr       */
+/*   Updated: 2023/04/22 15:22:55 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int	main(int argc, char **argv)
 	create_stack(&stacka);
 	create_stack(&stackb);
 	initial_stack(&stacka, argc, argv);
+	ft_printf("\n[%d]\n", index_nodes(&stacka));
 	if (argc == 3)
 		sort_two(&stacka);
 	else if (argc == 4)

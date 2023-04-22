@@ -6,19 +6,23 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 22:33:00 by tasantos          #+#    #+#             */
-/*   Updated: 2023/04/21 21:40:36 by marvin           ###   ########.fr       */
+/*   Updated: 2023/04/22 15:28:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 
-void imprimir_pilha(t_stack *stacka)
+void imprimir_pilha(t_stack *stacka, char a_or_b)
 {
 	t_node *aux;
 	
 	aux = stacka->first;
-    while(aux)
+	if (a_or_b == 'a')
+		ft_printf("A->");
+	else
+		ft_printf("B->");
+	while(aux)
 	{
 		ft_printf("[%d]->", aux->data);
 		aux = aux->next;
@@ -60,17 +64,24 @@ int	lowest_number(t_stack *stack)
 	return (min);
 }
 
-// int	index_nodes(t_stack *stack)
-// {
-// 	t_node	*aux;
-// 	aux = stack->first;
-// 	while (aux->next)
-// 	{
-// 		aux = aux->next;
-// 		i++;
-// 	}
-// 	return (aux->data);
-// }
+int	index_nodes(t_stack *stack)
+{
+	t_node	*aux;
+	int		low_number;
+	int		position_number;
+
+	low_number = lowest_number(stack);
+	aux = stack->first;
+	position_number = 0;
+	while (aux->next)
+	{
+		if (aux->data == low_number)
+			break;
+		position_number++;
+		aux = aux->next;
+	}
+	return (position_number);
+}
 
 // int	duo_ordenaded(t_stack *stack)
 // {
@@ -207,42 +218,59 @@ void pivot(t_stack *stacka, t_stack *stackb)
 {
     t_node  *aux;
     t_node  *aux_temp;
+	t_node	*auxer;
+	t_node	*auxiliar;
     int     pivot_number;
+	int		low_number;
+	int		big_number;
 
     pivot_number = 0;
     aux = stacka->first->next;
     aux_temp = aux;
-
     if (ordenaded(stacka))
-    {
-        push_a(stacka, stackb);
-        shift_up_ra(stacka);
         return ;
-    }
 	if (stacka->first->data > lowest_number(stacka) && stacka->first->data < bigest_number(stacka))
-    // if (aux->data > lowest_number(stacka) && aux->data < bigest_number(stacka))
 		pivot_number = stacka->first->data;
-        // pivot_number = aux->data;
-    else
+	else
     {
 		swap_a(stacka);
         pivot_number = stacka->first->data;
     }
-
 	while (1)
 	{
-		if (aux == NULL || aux->next == NULL)
+		if (ordenaded(stacka))
+		{
+			if (stackb->first != NULL)
+			{
+				///começa aqui
+				auxiliar = stackb->first;
+				while (auxiliar)
+				{
+					big_number = lowest_number(stackb);
+					if (big_number == auxiliar->data)
+					{
+						push_a(stacka, stackb);
+						shift_up_ra(stacka);
+					}
+					else 
+						shift_up_rb(stackb);
+					auxiliar = stackb->first;
+					if (auxiliar->next == NULL)
+						break;
+				}
+				///termina aqui
+			}
 			break;
+		}
 		if (aux->next != NULL)
 			aux_temp = aux->next;
-		if (pivot_number < aux->next->data)
+		if (pivot_number < aux->data)
 		{
 			swap_a(stacka);
 			push_b(stacka, stackb);
 		}
 		else if (pivot_number == aux->data)
 		{
-			// ft_printf("Quebrou aqui!!");
 			break;
 		}
 		else
@@ -252,33 +280,38 @@ void pivot(t_stack *stacka, t_stack *stackb)
 		else
 			aux = aux_temp;
 	}
-
-    // while (1)
-    // {
-    //     if (aux == NULL || aux->next == NULL)
-    //         break;
-    //     if (aux->next != NULL)
-    //         aux_temp = aux->next;
-
-    //     if (pivot_number < aux_temp->data)
-    //     {
-    //         swap_a(stacka);
-    //         push_b(stacka, stackb);
-    //     }
-    //     else if (pivot_number == aux->data)
-    //     {
-    //         break;
-    //     }
-    //     else
-    //         shift_up_ra(stacka);
-    //     if (aux_temp == NULL)
-    //         break;
-    //     else
-    //         aux = aux_temp;
-    // }
-
-    // ft_printf("\n\n\nFora do While ---fim\n\n");
-    return ;
+	pivot(stacka, stackb);
+	low_number = lowest_number(stacka);
+	auxer = stacka->first;
+	while (!(ordenaded(stacka)))
+	{
+		if (auxer->data == low_number)
+			shift_up_ra(stacka);
+		else if (auxer->next->data < auxer->data)
+		{
+			swap_a(stacka);
+			shift_up_ra(stacka);
+		}
+		else
+			shift_up_ra(stacka);
+		auxer = stacka->first->next;
+	}
+	auxiliar = stackb->first;
+	while (auxiliar)
+	{
+		big_number = lowest_number(stackb);
+		if (big_number == auxiliar->data)
+		{
+			push_a(stacka, stackb);
+			shift_up_ra(stacka);
+		}
+		else 
+			shift_up_rb(stackb);
+		auxiliar = stackb->first;
+		if (auxiliar->next == NULL)
+			break;
+	}
+	return ;
 }
 
 void	quick_insert(t_stack *stacka,t_stack *stackb)

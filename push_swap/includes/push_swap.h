@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:50:08 by tasantos          #+#    #+#             */
-/*   Updated: 2023/04/21 20:57:03 by marvin           ###   ########.fr       */
+/*   Updated: 2023/04/22 15:17:15 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,15 @@ void			free_all(t_stack *stacka, t_stack *stackb);
 t_node			*create_node(int num);
 void			add_node(t_stack *stack, t_node *new);
 void			initial_stack(t_stack *stacka, int argc, char *argv[]);
-void			imprimir_pilha(t_stack *stacka);
+void			imprimir_pilha(t_stack *stacka, char a_or_b);
 //quicksort
 int				bigest_number(t_stack *stack);
 int				lowest_number(t_stack *stack);
 void			quick_sort(t_stack *stacka, t_stack *stackb);
 void			pivot(t_stack *stacka, t_stack *stackb);
 int				stack_len(t_stack *stack);
+void			quick_insert(t_stack *stacka,t_stack *stackb);
+//perform
+int				index_nodes(t_stack *stack);
 
 #endif
