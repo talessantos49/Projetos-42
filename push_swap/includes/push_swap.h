@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:50:08 by tasantos          #+#    #+#             */
-/*   Updated: 2023/04/22 15:17:15 by marvin           ###   ########.fr       */
+/*   Updated: 2023/04/22 15:34:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,7 @@ int				stack_len(t_stack *stack);
 void			quick_insert(t_stack *stacka,t_stack *stackb);
 //perform
 int				index_nodes(t_stack *stack);
+void			core_ordenation(t_stack *stacka, t_stack *stackb);
+
 
 #endif

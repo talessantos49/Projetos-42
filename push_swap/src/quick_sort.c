@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 22:33:00 by tasantos          #+#    #+#             */
-/*   Updated: 2023/04/22 15:28:29 by marvin           ###   ########.fr       */
+/*   Updated: 2023/04/22 15:57:38 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,6 +213,40 @@ int	stack_len(t_stack *stack)
 // 	// ft_printf("\n\n\nFora do While ---fim\n\n");
 // 	return ;
 // }
+void	rotate_direction(t_stack *stack)
+{
+	int	position_number;
+	int	index_position;
+
+	position_number = index_nodes(stack);
+	index_position = stack_len(stack);
+	if (position_number > (index_position / 2))
+		shift_down_rrb(stack);
+	else
+		shift_up_rb(stack);
+}
+
+void core_ordenation(t_stack *stacka, t_stack *stackb)
+{
+	t_node	*auxiliar;
+	int		low_number;
+
+	auxiliar = stackb->first;
+	while (auxiliar)
+	{
+		low_number = lowest_number(stackb);
+		if (low_number == auxiliar->data)
+		{
+			push_a(stacka, stackb);
+			shift_up_ra(stacka);
+		}
+		else
+			rotate_direction(stackb);
+		auxiliar = stackb->first;
+		if (auxiliar->next == NULL)
+			break;
+	}
+}
 
 void pivot(t_stack *stacka, t_stack *stackb)
 {
@@ -227,8 +261,8 @@ void pivot(t_stack *stacka, t_stack *stackb)
     pivot_number = 0;
     aux = stacka->first->next;
     aux_temp = aux;
-    if (ordenaded(stacka))
-        return ;
+	if (ordenaded(stacka))
+		return ;
 	if (stacka->first->data > lowest_number(stacka) && stacka->first->data < bigest_number(stacka))
 		pivot_number = stacka->first->data;
 	else
@@ -241,25 +275,7 @@ void pivot(t_stack *stacka, t_stack *stackb)
 		if (ordenaded(stacka))
 		{
 			if (stackb->first != NULL)
-			{
-				///começa aqui
-				auxiliar = stackb->first;
-				while (auxiliar)
-				{
-					big_number = lowest_number(stackb);
-					if (big_number == auxiliar->data)
-					{
-						push_a(stacka, stackb);
-						shift_up_ra(stacka);
-					}
-					else 
-						shift_up_rb(stackb);
-					auxiliar = stackb->first;
-					if (auxiliar->next == NULL)
-						break;
-				}
-				///termina aqui
-			}
+				core_ordenation(stacka, stackb);
 			break;
 		}
 		if (aux->next != NULL)

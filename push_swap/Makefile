@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 17:15:41 by tasantos          #+#    #+#              #
-#    Updated: 2023/04/22 15:25:16 by marvin           ###   ########.fr        #
+#    Updated: 2023/04/22 15:49:18 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ dance_duck:
 			${CC} ${CFLAGS} ${SOURCES} ${DOT_A} ${LIBFT}
 
 valgrind: ${NAME}
-	$(VALGRIND) ./${NAME} 64 52 43 98 73 91 63 13 25 62 89 37 100 
+	$(VALGRIND) ./${NAME} 9 8 4 1 3 2 5
 
 teste:	${NAME}
 	./${NAME} 2 5 6 1 0 8 4 7 9 3 | ./checker_linux 2 5 6 1 8

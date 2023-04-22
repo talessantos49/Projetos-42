@@ -1,14 +1,167 @@
-==7677== Memcheck, a memory error detector
-==7677== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==7677== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==7677== Command: ./push_swap 64 52 43 98 73 91 63 13 25 62 89 37 100
-==7677== Parent PID: 7676
-==7677== 
-==7677== 
-==7677== HEAP SUMMARY:
-==7677==     in use at exit: 0 bytes in 0 blocks
-==7677==   total heap usage: 93 allocs, 93 frees, 2,242 bytes allocated
-==7677== 
-==7677== All heap blocks were freed -- no leaks are possible
-==7677== 
-==7677== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==7930== Memcheck, a memory error detector
+==7930== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==7930== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==7930== Command: ./push_swap 9 8 4 1 3 2 5
+==7930== Parent PID: 7929
+==7930== 
+==7930== Invalid read of size 8
+==7930==    at 0x10ACF8: pivot (quick_sort.c:284)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Address 0x4a4f1d8 is 8 bytes inside a block of size 16 free'd
+==7930==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x109FB6: remove_list (stacks.c:49)
+==7930==    by 0x10996A: swap_a (movimentsA.c:36)
+==7930==    by 0x10ACB2: pivot (quick_sort.c:273)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Block was alloc'd at
+==7930==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x10A08A: create_node (stacks.c:83)
+==7930==    by 0x10A749: insert_down (stacksA.c:19)
+==7930==    by 0x10A810: initial_stack (stacksA.c:48)
+==7930==    by 0x10943A: main (push_swap.c:91)
+==7930== 
+==7930== Invalid read of size 8
+==7930==    at 0x10AD05: pivot (quick_sort.c:285)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Address 0x4a4f1d8 is 8 bytes inside a block of size 16 free'd
+==7930==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x109FB6: remove_list (stacks.c:49)
+==7930==    by 0x10996A: swap_a (movimentsA.c:36)
+==7930==    by 0x10ACB2: pivot (quick_sort.c:273)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Block was alloc'd at
+==7930==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x10A08A: create_node (stacks.c:83)
+==7930==    by 0x10A749: insert_down (stacksA.c:19)
+==7930==    by 0x10A810: initial_stack (stacksA.c:48)
+==7930==    by 0x10943A: main (push_swap.c:91)
+==7930== 
+==7930== Invalid read of size 4
+==7930==    at 0x10AD11: pivot (quick_sort.c:286)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Address 0x4a4f1d0 is 0 bytes inside a block of size 16 free'd
+==7930==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x109FB6: remove_list (stacks.c:49)
+==7930==    by 0x10996A: swap_a (movimentsA.c:36)
+==7930==    by 0x10ACB2: pivot (quick_sort.c:273)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Block was alloc'd at
+==7930==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x10A08A: create_node (stacks.c:83)
+==7930==    by 0x10A749: insert_down (stacksA.c:19)
+==7930==    by 0x10A810: initial_stack (stacksA.c:48)
+==7930==    by 0x10943A: main (push_swap.c:91)
+==7930== 
+==7930== Invalid read of size 4
+==7930==    at 0x10AD3D: pivot (quick_sort.c:291)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Address 0x4a4f1d0 is 0 bytes inside a block of size 16 free'd
+==7930==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x109FB6: remove_list (stacks.c:49)
+==7930==    by 0x10996A: swap_a (movimentsA.c:36)
+==7930==    by 0x10ACB2: pivot (quick_sort.c:273)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Block was alloc'd at
+==7930==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x10A08A: create_node (stacks.c:83)
+==7930==    by 0x10A749: insert_down (stacksA.c:19)
+==7930==    by 0x10A810: initial_stack (stacksA.c:48)
+==7930==    by 0x10943A: main (push_swap.c:91)
+==7930== 
+==7930== 
+==7930== HEAP SUMMARY:
+==7930==     in use at exit: 0 bytes in 0 blocks
+==7930==   total heap usage: 45 allocs, 45 frees, 960 bytes allocated
+==7930== 
+==7930== All heap blocks were freed -- no leaks are possible
+==7930== 
+==7930== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+==7930== 
+==7930== 1 errors in context 1 of 4:
+==7930== Invalid read of size 4
+==7930==    at 0x10AD3D: pivot (quick_sort.c:291)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Address 0x4a4f1d0 is 0 bytes inside a block of size 16 free'd
+==7930==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x109FB6: remove_list (stacks.c:49)
+==7930==    by 0x10996A: swap_a (movimentsA.c:36)
+==7930==    by 0x10ACB2: pivot (quick_sort.c:273)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Block was alloc'd at
+==7930==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x10A08A: create_node (stacks.c:83)
+==7930==    by 0x10A749: insert_down (stacksA.c:19)
+==7930==    by 0x10A810: initial_stack (stacksA.c:48)
+==7930==    by 0x10943A: main (push_swap.c:91)
+==7930== 
+==7930== 
+==7930== 1 errors in context 2 of 4:
+==7930== Invalid read of size 4
+==7930==    at 0x10AD11: pivot (quick_sort.c:286)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Address 0x4a4f1d0 is 0 bytes inside a block of size 16 free'd
+==7930==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x109FB6: remove_list (stacks.c:49)
+==7930==    by 0x10996A: swap_a (movimentsA.c:36)
+==7930==    by 0x10ACB2: pivot (quick_sort.c:273)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Block was alloc'd at
+==7930==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x10A08A: create_node (stacks.c:83)
+==7930==    by 0x10A749: insert_down (stacksA.c:19)
+==7930==    by 0x10A810: initial_stack (stacksA.c:48)
+==7930==    by 0x10943A: main (push_swap.c:91)
+==7930== 
+==7930== 
+==7930== 1 errors in context 3 of 4:
+==7930== Invalid read of size 8
+==7930==    at 0x10AD05: pivot (quick_sort.c:285)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Address 0x4a4f1d8 is 8 bytes inside a block of size 16 free'd
+==7930==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x109FB6: remove_list (stacks.c:49)
+==7930==    by 0x10996A: swap_a (movimentsA.c:36)
+==7930==    by 0x10ACB2: pivot (quick_sort.c:273)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Block was alloc'd at
+==7930==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x10A08A: create_node (stacks.c:83)
+==7930==    by 0x10A749: insert_down (stacksA.c:19)
+==7930==    by 0x10A810: initial_stack (stacksA.c:48)
+==7930==    by 0x10943A: main (push_swap.c:91)
+==7930== 
+==7930== 
+==7930== 1 errors in context 4 of 4:
+==7930== Invalid read of size 8
+==7930==    at 0x10ACF8: pivot (quick_sort.c:284)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Address 0x4a4f1d8 is 8 bytes inside a block of size 16 free'd
+==7930==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x109FB6: remove_list (stacks.c:49)
+==7930==    by 0x10996A: swap_a (movimentsA.c:36)
+==7930==    by 0x10ACB2: pivot (quick_sort.c:273)
+==7930==    by 0x10AF62: quick_sort (quick_sort.c:361)
+==7930==    by 0x1094AB: main (push_swap.c:102)
+==7930==  Block was alloc'd at
+==7930==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7930==    by 0x10A08A: create_node (stacks.c:83)
+==7930==    by 0x10A749: insert_down (stacksA.c:19)
+==7930==    by 0x10A810: initial_stack (stacksA.c:48)
+==7930==    by 0x10943A: main (push_swap.c:91)
+==7930== 
+==7930== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
