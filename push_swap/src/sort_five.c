@@ -36,6 +36,8 @@ t_node	*last_node(t_stack *stack)
 	t_node	*aux;
 
 	aux = stack->first;
+	if (stack->first == NULL)
+		return (aux);
 	while (aux->next)
 		aux = aux->next;
 	return (aux);

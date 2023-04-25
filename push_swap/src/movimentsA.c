@@ -12,30 +12,33 @@
 
 #include "../includes/push_swap.h"
 
-void	push_a(t_stack *stackA, t_stack *stackB)
+void	push_a(t_stack *stacka, t_stack *stackb)
 {
-	if (!stackB->first)
+	if (!stackb->first)
 		return ;
-	insert_up(stackA, stackB->first->data);
-	remove_list(stackB, stackB->first->data);
+	insert_up(stacka, stackb->first->data);
+	remove_list(stackb, stackb->first->data);
+	stacka->last = last_node(stacka);
+	stackb->last = last_node(stackb);
 	write(1, "pa\n", 3);
 }
 
-void	swap_a(t_stack *stackA)
+void	swap_a(t_stack *stacka)
 {
 	int		data1;
 	int		data2;
 
-	if (stackA->first == NULL || stackA->first->next == NULL)
+	if (stacka->first == NULL || stacka->first->next == NULL)
 		return ;
-	if (stack_len(stackA) < 2)
+	if (stack_len(stacka) < 2)
 		return ;
-	data1 = stackA->first->data;
-	data2 = stackA->first->next->data;
-	remove_list(stackA, data1);
-	remove_list(stackA, data2);
-	insert_up(stackA, data1);
-	insert_up(stackA, data2);
+	data1 = stacka->first->data;
+	data2 = stacka->first->next->data;
+	remove_list(stacka, data1);
+	remove_list(stacka, data2);
+	insert_up(stacka, data1);
+	insert_up(stacka, data2);
+	stacka->last = last_node(stacka);
 	write(1, "sa\n", 3);
 }
 
@@ -46,11 +49,13 @@ void	shift_down_rra(t_stack *stack)
 	aux = last_number(stack);
 	remove_list(stack, aux);
 	insert_up(stack, aux);
+	stack->last = last_node(stack);
 	write(1, "rra\n", 4);
 }
 
 void	shift_up_ra(t_stack *stack)
 {
 	shift_up(stack);
+	stack->last = last_node(stack);
 	write(1, "ra\n", 3);
 }

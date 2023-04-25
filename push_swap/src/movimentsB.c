@@ -12,12 +12,14 @@
 
 #include "../includes/push_swap.h"
 
-void	push_b(t_stack *stackA, t_stack *stackB)
+void	push_b(t_stack *stacka, t_stack *stackb)
 {
-	if (!stackA->first)
+	if (!stacka->first)
 		return ;
-	insert_up(stackB, stackA->first->data);
-	remove_list(stackA, stackA->first->data);
+	insert_up(stackb, stacka->first->data);
+	remove_list(stacka, stacka->first->data);
+	stacka->last = last_node(stacka);
+	stackb->last = last_node(stackb);
 	write(1, "pb\n", 3);
 }
 
@@ -36,23 +38,24 @@ void	swap_b(t_stack *stackb)
 	remove_list(stackb, data2);
 	insert_up(stackb, data1);
 	insert_up(stackb, data2);
+	stackb->last = last_node(stackb);
 	write(1, "sb\n", 3);
 }
 
 void	shift_down_rrb(t_stack *stack)
 {
 	int		aux;
-	// t_node	*aux1;
 
 	aux = last_number(stack);
-	// aux1 = last_node(stack);
 	remove_list(stack, aux);
 	insert_up(stack, aux);
+	stack->last = last_node(stack);
 	write(1, "rrb\n", 4);
 }
 
 void	shift_up_rb(t_stack *stack)
 {
 	shift_up(stack);
+	stack->last = last_node(stack);
 	write(1, "rb\n", 3);
 }
