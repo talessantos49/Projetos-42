@@ -84,6 +84,7 @@ t_node	*create_node(int num)
 	if (new)
 	{
 		new->data = num;
+		new->index = 0;
 		new->next = NULL;
 	}
 	else

@@ -19,6 +19,7 @@
 
 typedef struct s_node{
 	int				data;
+	int				index;
 	struct s_node	*next;
 }	t_node;
 
@@ -84,6 +85,6 @@ void			quick_insert(t_stack *stacka,t_stack *stackb);
 //perform
 int				index_nodes(t_stack *stack);
 void			core_ordenation(t_stack *stacka, t_stack *stackb);
-
+void			indexando(t_node *stack);
 
 #endif

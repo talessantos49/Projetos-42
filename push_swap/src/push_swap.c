@@ -89,7 +89,8 @@ int	main(int argc, char **argv)
 	create_stack(&stacka);
 	create_stack(&stackb);
 	initial_stack(&stacka, argc, argv);
-	// ft_printf("\n[%d]\n", index_nodes(&stacka));
+	indexando(stacka.first);
+	// imprimir_pilha(&stacka,'a');
 	if (argc == 3)
 		sort_two(&stacka);
 	else if (argc == 4)

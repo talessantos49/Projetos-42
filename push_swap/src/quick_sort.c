@@ -27,6 +27,17 @@ void imprimir_pilha(t_stack *stacka, char a_or_b)
 		ft_printf("[%d]->", aux->data);
 		aux = aux->next;
 	}
+	ft_printf("\n");
+	aux = stacka->first;
+	if (a_or_b == 'a')
+		ft_printf("A->");
+	else
+		ft_printf("B->");
+	while (aux)
+	{
+		ft_printf("[%d]->",aux->index);
+		aux = aux->next;
+	}
     ft_printf("\n-----------------------------\n");
 }
 
@@ -48,7 +59,23 @@ int	bigest_number(t_stack *stack)
 	return (max);
 }
 
+int	bigest_number_index(t_stack *stack)
+{
+	t_node	*aux;
+	int		max;
 
+	if (!stack->first)
+		return (0);
+	max = stack->first->index;
+	aux = stack->first;
+	while (aux->next)
+	{
+		if (max < aux->next->index)
+			max = aux->next->index;
+		aux = aux->next;
+	}
+	return (max);
+}
 
 int	lowest_number(t_stack *stack)
 {
@@ -68,25 +95,25 @@ int	lowest_number(t_stack *stack)
 	return (min);
 }
 
-int	*general_bigest_number(t_stack *stack, int bigest)
-{
-	t_node	*aux;
-	int		max;
-	int		*array;
+// int	*general_bigest_number(t_stack *stack, int bigest)
+// {
+// 	t_node	*aux;
+// 	int		max;
+// 	int		*array;
 
-	if (!stack->first)
-		return (0);
-	max = lowest_number(stack);
-	aux = stack->first;
-	while (aux->next)
-	{
-		if (max < aux->data)
-			if (bigest != aux->data)
-				max = aux->data;
-		aux = aux->next;
-	}
-	return (array);
-}
+// 	if (!stack->first)
+// 		return (0);
+// 	max = lowest_number(stack);
+// 	aux = stack->first;
+// 	while (aux->next)
+// 	{
+// 		if (max < aux->data)
+// 			if (bigest != aux->data)
+// 				max = aux->data;
+// 		aux = aux->next;
+// 	}
+// 	return (array);
+// }
 
 int	*lowest_ten(t_stack *stack)
 {
@@ -499,28 +526,46 @@ void inverted_core_ordenation(t_stack *stacka, t_stack *stackb)
 	}
 }
 
-int		number_pivot(t_stack *stacka, t_stack *stackb)
-{
-	int	pivot_number;
+// int		number_pivot(t_stack *stacka, t_stack *stackb)
+// {
+// 	int	pivot_number;
 
-	pivot_number = 0;
-	if (stack_len(stacka) <= 2 && stacka->first->next != NULL)
+// 	pivot_number = 0;
+// 	if (stack_len(stacka) <= 2 && stacka->first->next != NULL)
+// 	{
+// 		push_b(stacka, stackb);
+// 		pivot_number = stacka->first->data;
+// 	}
+// 	else if (stacka->last->data != lowest_number(stacka) && stacka->last->data != bigest_number(stacka))
+// 	{
+// 		shift_down_rra(stacka);
+// 		pivot_number = stacka->first->data;
+// 		shift_up_ra(stacka);
+// 	}
+// 	else if (stacka->first->data != lowest_number(stacka) && stacka->first->data != bigest_number(stacka))
+// 	{
+// 		pivot_number = stacka->first->data;
+// 		shift_up_ra(stacka);
+// 	}
+// 	return (pivot_number);
+// }
+
+int		number_pivot(t_stack *stacka)
+{
+	t_node	*aux;
+	int	mid;
+
+	mid = bigest_number_index(stacka)/2;
+	aux = stacka->first;
+	if (mid <= 2)
+		return (aux->data);
+	while (aux)
 	{
-		push_b(stacka, stackb);
-		pivot_number = stacka->first->data;
+		if (aux->index == mid)
+			return (aux->data);
+		aux = aux->next;
 	}
-	else if (stacka->last->data != lowest_number(stacka) && stacka->last->data != bigest_number(stacka))
-	{
-		shift_down_rra(stacka);
-		pivot_number = stacka->first->data;
-		shift_up_ra(stacka);
-	}
-	else if (stacka->first->data != lowest_number(stacka) && stacka->first->data != bigest_number(stacka))
-	{
-		pivot_number = stacka->first->data;
-		shift_up_ra(stacka);
-	}
-	return (pivot_number);
+	return (0);
 }
 
 void	choice_pivot(t_stack *stacka, t_stack *stackb)
@@ -529,7 +574,8 @@ void	choice_pivot(t_stack *stacka, t_stack *stackb)
 	int		pivot_number;
 
 	aux = stacka->first->next;
-	pivot_number = number_pivot(stacka, stackb);
+	pivot_number = number_pivot(stacka);
+	// pivot_number = number_pivot(stacka, stackb);
 	if (!aux)
 		return;
 	while (aux)
@@ -541,7 +587,8 @@ void	choice_pivot(t_stack *stacka, t_stack *stackb)
 		{
 			if (stacka->first->data == pivot_number)
 			{
-				pivot_number = number_pivot(stacka, stackb);
+				pivot_number = number_pivot(stacka);
+				// pivot_number = number_pivot(stacka, stackb);
 				break ;
 			}
 			else if (stacka->first->data > pivot_number)
@@ -725,6 +772,45 @@ void	quick_insert(t_stack *stacka,t_stack *stackb)
 // 	shift_up_ra(stacka);
 // }
 
+// static void	set_index(t_stack *stack_a)
+// {
+// 	t_stack	*stack_copy;
+// 	t_stack	*stack_aux;
+
+// 	stack_copy = stack_a;
+// 	while (stack_a)
+// 	{
+// 		stack_aux = stack_copy;
+// 		while (stack_aux)
+// 		{
+// 			if (stack_a->number > stack_aux->number)
+// 				(stack_a->index)++;
+// 			stack_aux = stack_aux->next;
+// 		}
+// 		stack_a = stack_a->next;
+// 	}
+// }
+
+void	indexando(t_node *stack)
+{
+	t_node	*stack_aux;
+	t_node	*stack_copy;
+
+	stack_copy = stack;
+	while (stack)
+	{
+		stack_aux = stack_copy;
+		while (stack_aux)
+		{
+			if (stack->data > stack_aux->data)
+				(stack->index)++;
+			stack_aux = stack_aux->next;
+
+		}
+		stack = stack->next;
+	}
+}
+
 void print_first_ten(int *array) {
     int i = 0;
     while (i < 5) {
@@ -736,14 +822,12 @@ void print_first_ten(int *array) {
 
 void	quick_sort(t_stack *stacka, t_stack *stackb)
 {
-	int	*lowest;
-	// int		low;
-
-	lowest = lowest_ten(stacka);
-	ft_printf("bigest [%d]\n", bigest_number(stacka));
-	print_first_ten(lowest);
-	push_b(stacka, stackb);
-	// choice_pivot(stacka, stackb);
-	// quick_insert(stacka, stackb);
+	// // indexando(stacka->first);
+	// ft_printf("Biggest[%d]\n", bigest_number_index(stacka));
+	// ft_printf("index->last [%d]\n", stacka->last->index);
+	// push_b(stacka, stackb);
+	
+	choice_pivot(stacka, stackb);
+	quick_insert(stacka, stackb);
 	// pivot(stacka, stackb);
 }
