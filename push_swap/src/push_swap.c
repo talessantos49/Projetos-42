@@ -89,7 +89,7 @@ int	main(int argc, char **argv)
 	create_stack(&stacka);
 	create_stack(&stackb);
 	initial_stack(&stacka, argc, argv);
-	indexando(stacka.first);
+	set_index(stacka.first);
 	// imprimir_pilha(&stacka,'a');
 	if (argc == 3)
 		sort_two(&stacka);
@@ -100,7 +100,8 @@ int	main(int argc, char **argv)
 	else if (argc == 6)
 		sort_five(&stacka, &stackb);
 	else
-		quick_sort(&stacka, &stackb);
+		radix(argc -1, &stacka, &stackb);
+		// quick_sort(&stacka, &stackb);
 	free_all(&stacka, &stackb);
 	return (0);
 }

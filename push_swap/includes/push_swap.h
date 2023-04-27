@@ -27,9 +27,6 @@ typedef struct s_stack{
 	t_node	*first;
 	t_node	*last;
 	int		len;
-	int		size;
-	int		bit_size;
-	int		list_size;	
 }	t_stack;
 
 long long int	ft_atoi_push(const char	*str);
@@ -85,6 +82,8 @@ void			quick_insert(t_stack *stacka,t_stack *stackb);
 //perform
 int				index_nodes(t_stack *stack);
 void			core_ordenation(t_stack *stacka, t_stack *stackb);
-void			indexando(t_node *stack);
+void			set_index(t_node *stack);
+void			radix(int arg, t_stack *stacka, t_stack *stackb);
+
 
 #endif

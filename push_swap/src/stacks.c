@@ -17,9 +17,6 @@ void	create_stack(t_stack *stack)
 	stack->first = NULL;
 	stack->last = NULL;
 	stack->len = 0;
-	stack->size = 0;
-	stack->bit_size = 0;
-	stack->list_size = 0;
 }
 
 void remove_list(t_stack *stack, int value)
@@ -83,8 +80,8 @@ t_node	*create_node(int num)
 	new = malloc(sizeof(t_node));
 	if (new)
 	{
-		new->data = num;
 		new->index = 0;
+		new->data = num;
 		new->next = NULL;
 	}
 	else

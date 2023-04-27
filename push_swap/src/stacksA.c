@@ -48,5 +48,4 @@ void	initial_stack(t_stack *stacka, int argc, char *argv[])
 		insert_down(stacka, value);
 		i++;
 	}
-	stacka->size = (i - 1);
 }
