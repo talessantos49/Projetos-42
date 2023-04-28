@@ -64,20 +64,6 @@ void	free_stack(t_stack *stack)
 	free(last);
 }
 
-void	free_node(t_node *node)
-{
-	t_node	*node_temp;
-
-	if (node)
-		return ;
-	while (node)
-	{
-		node_temp = node->next;
-		free(node);
-		node = node_temp;
-	}
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	stacka;
@@ -90,7 +76,6 @@ int	main(int argc, char **argv)
 	create_stack(&stackb);
 	initial_stack(&stacka, argc, argv);
 	set_index(stacka.first);
-	// imprimir_pilha(&stacka,'a');
 	if (argc == 3)
 		sort_two(&stacka);
 	else if (argc == 4)
@@ -101,7 +86,6 @@ int	main(int argc, char **argv)
 		sort_five(&stacka, &stackb);
 	else
 		radix(argc -1, &stacka, &stackb);
-		// quick_sort(&stacka, &stackb);
 	free_all(&stacka, &stackb);
 	return (0);
 }

@@ -29,12 +29,14 @@ typedef struct s_stack{
 	int		len;
 }	t_stack;
 
+//args and checker
 long long int	ft_atoi_push(const char	*str);
 int				check_ordenated(int argc, char *argv[]);
 int				check_max_min(char *str);
 int				check_numbers(char *str);
 int				duplicated_args(int argc, char *argv[]);
 void			checkers(int argc, char *argv[]);
+//moviments
 void			push_a(t_stack *stackA, t_stack *stackB);
 void			swap_a(t_stack *stackA);
 void			shift_down_rra(t_stack *stack);
@@ -64,26 +66,15 @@ void			remove_last(t_stack *stack, int valor);
 void			sort_four_last(t_stack *stacka, t_stack *stackb);
 void			double_rra(t_stack *stacka);
 void			swap_push(t_stack *stacka, t_stack *stackb);
-void			sort_three_last(t_stack* stacka);
-void			free_node(t_node *node);
+void			sort_three_last(t_stack *stacka);
 void			free_stack(t_stack *stacka);
 void			free_all(t_stack *stacka, t_stack *stackb);
 t_node			*create_node(int num);
 void			add_node(t_stack *stack, t_node *new);
 void			initial_stack(t_stack *stacka, int argc, char *argv[]);
-void			imprimir_pilha(t_stack *stacka, char a_or_b);
-//quicksort
-int				bigest_number(t_stack *stack);
-int				lowest_number(t_stack *stack);
-void			quick_sort(t_stack *stacka, t_stack *stackb);
-void			pivot(t_stack *stacka, t_stack *stackb);
 int				stack_len(t_stack *stack);
-void			quick_insert(t_stack *stacka,t_stack *stackb);
 //perform
-int				index_nodes(t_stack *stack);
-void			core_ordenation(t_stack *stacka, t_stack *stackb);
 void			set_index(t_node *stack);
 void			radix(int arg, t_stack *stacka, t_stack *stackb);
-
 
 #endif

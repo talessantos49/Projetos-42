@@ -27,8 +27,7 @@ SOURCES_LIST	= push_swap.c \
 				sort_five.c	\
 				liners.c \
 				stacksA.c \
-				extras.c \
-				quick_sort.c
+				radix.c
 
 GREEN			= \033[0;32m
 

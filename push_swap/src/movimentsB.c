@@ -34,7 +34,6 @@ void	swap_b(t_stack *stackb)
 	int		index1;
 	int		index2;
 
-
 	if (stackb->first == NULL || stackb->first->next == NULL)
 		return ;
 	if (stack_len(stackb) < 2)
