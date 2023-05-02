@@ -25,8 +25,6 @@ that offers a healthy alternative to traditional education:
 You need to know we have a loot of norms and restrictions, like we cant use `for`, our program must have no more than 25 lines, etc;
 If you want to see more than this, see the [norminette](https://github.com/42school/norminette)
 
----
-
 All projects made by me I'll bring here and tell for everyone, about what is and the creation process.
 
 <div align="center">
