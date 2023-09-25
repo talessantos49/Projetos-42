@@ -64,20 +64,6 @@ void	free_stack(t_stack *stack)
 	free(last);
 }
 
-void	free_node(t_node *node)
-{
-	t_node	*node_temp;
-
-	if (node)
-		return ;
-	while (node)
-	{
-		node_temp = node->next;
-		free(node);
-		node = node_temp;
-	}
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	stacka;
@@ -89,7 +75,7 @@ int	main(int argc, char **argv)
 	create_stack(&stacka);
 	create_stack(&stackb);
 	initial_stack(&stacka, argc, argv);
-	// ft_printf("\n[%d]\n", index_nodes(&stacka));
+	set_index(stacka.first);
 	if (argc == 3)
 		sort_two(&stacka);
 	else if (argc == 4)
@@ -99,7 +85,7 @@ int	main(int argc, char **argv)
 	else if (argc == 6)
 		sort_five(&stacka, &stackb);
 	else
-		quick_sort(&stacka, &stackb);
+		radix(argc -1, &stacka, &stackb);
 	free_all(&stacka, &stackb);
 	return (0);
 }

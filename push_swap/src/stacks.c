@@ -17,36 +17,34 @@ void	create_stack(t_stack *stack)
 	stack->first = NULL;
 	stack->last = NULL;
 	stack->len = 0;
-	stack->size = 0;
-	stack->bit_size = 0;
-	stack->list_size = 0;
 }
 
-void remove_list(t_stack *stack, int value)
+void	remove_list(t_stack *stack, int value)
 {
-    if (!stack->first)
-        return;
+	t_node	*node;
+	t_node	*prev;
 
-    t_node *node = stack->first;
-    t_node *prev = NULL;
-
-    while (node && node->data != value)
+	if (!stack->first)
+		return ;
+	node = stack->first;
+	prev = NULL;
+	while (node && node->data != value)
 	{
-        prev = node;
-        node = node->next;
-    }
-    if (!node)
-        return;
-    if (node == stack->first)
-        stack->first = node->next; 
+		prev = node;
+		node = node->next;
+	}
+	if (!node)
+		return ;
+	if (node == stack->first)
+		stack->first = node->next;
 	else if (node == stack->last)
 	{
-        stack->last = prev;
-        prev->next = NULL;
-    }
+		stack->last = prev;
+		prev->next = NULL;
+	}
 	else
-        prev->next = node->next;
-    free(node);
+		prev->next = node->next;
+	free(node);
 }
 
 void	insert_up(t_stack *stack, int num)
@@ -83,6 +81,7 @@ t_node	*create_node(int num)
 	new = malloc(sizeof(t_node));
 	if (new)
 	{
+		new->index = 0;
 		new->data = num;
 		new->next = NULL;
 	}

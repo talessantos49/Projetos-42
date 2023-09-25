@@ -27,8 +27,7 @@ SOURCES_LIST	= push_swap.c \
 				sort_five.c	\
 				liners.c \
 				stacksA.c \
-				extras.c \
-				quick_sort.c
+				radix.c
 
 GREEN			= \033[0;32m
 
@@ -106,3 +105,33 @@ fclean:		clean
 re:			fclean all
 
 .PHONY:		all, clean, fclean, re
+
+
+VALGRIND1		= @valgrind --leak-check=full --show-leak-kinds=all \
+--track-origins=yes --quiet --tool=memcheck --keep-debuginfo=yes --verbose \
+--log-file=valgrind-out1.txt
+
+VALGRIND2		= @valgrind --leak-check=full --show-leak-kinds=all \
+--track-origins=yes --quiet --tool=memcheck --keep-debuginfo=yes --verbose \
+--log-file=valgrind-out2.txt
+
+VALGRIND3		= @valgrind --leak-check=full --show-leak-kinds=all \
+--track-origins=yes --quiet --tool=memcheck --keep-debuginfo=yes --verbose \
+--log-file=valgrind-out3.txt
+
+VALGRIND4		= @valgrind --leak-check=full --show-leak-kinds=all \
+--track-origins=yes --quiet --tool=memcheck --keep-debuginfo=yes --verbose \
+--log-file=valgrind-out4.txt
+
+full_test: $(NAME)
+	@clear
+	@echo -n "  2 args     [1] = "
+	@./push_swap $(shell shuf -i 0-10000 -n 2) | wc -l
+	@echo -n "  3 args     [3] = "
+	@$(VALGRIND1) ./push_swap $(shell shuf -i 0-10000 -n 3) | wc -l
+	@echo -n "  5 args    [12] = "
+	@$(VALGRIND2) ./push_swap $(shell shuf -i 0-10000 -n 5) | wc -l
+	@echo -n "100 args  [1099] = "
+	@$(VALGRIND3) ./push_swap $(shell shuf -i 0-10000 -n 100) | wc -l
+	@echo -n "500 args  [8499] = "
+	@$(VALGRIND4) ./push_swap $(shell shuf -i 0-10000 -n 500) | wc -l
