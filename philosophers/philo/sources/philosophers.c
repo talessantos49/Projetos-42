@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tasantos <tasantos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:34:28 by tasantos          #+#    #+#             */
-/*   Updated: 2023/09/25 19:45:08 by tasantos         ###   ########.fr       */
+/*   Updated: 2023/09/26 18:26:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,13 @@ int	taking_fork(int time_general, int philo_number)
 	printf("%d %d has taken a fork\n", time_general, philo_number);
 	return (1);
 }
+long int	get_current_time(void)
+{
+	struct timeval	current_time;
+
+	gettimeofday(&current_time, NULL);
+	return (current_time.tv_sec * 1000 + current_time.tv_usec / 1000);
+}
 
 int	main(int argc, char **argv)
 {
@@ -102,12 +109,14 @@ int	main(int argc, char **argv)
 	struct timeval end;
 	int		tester;
 	int		timeout;
+	int		timestamp;
 	pthread_mutex_t mutex;
 
 	pthread_mutex_init(&mutex, NULL);
 	timeout = 0;
 	tester = 0;
 	pthread_mutex_lock(&mutex);
+	timestamp = get_current_time();
 	while (timeout < 200)
 	{
 		gettimeofday(&start, NULL);
@@ -115,6 +124,8 @@ int	main(int argc, char **argv)
 			return (0);
 		gettimeofday(&end, NULL);
 		timeout = end.tv_usec - start.tv_usec;
+		printf("Timestamp: %d\n", timestamp);
+		timestamp = get_current_time();
 		printf("Timeout: %d\n", timeout);
 		tester += eating_philo(timeout, 1);
 		tester += thinking_philo(timeout, 1);
