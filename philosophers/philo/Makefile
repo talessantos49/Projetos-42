@@ -6,7 +6,7 @@
 #    By: tasantos <tasantos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 17:15:41 by tasantos          #+#    #+#              #
-#    Updated: 2023/09/25 16:20:38 by tasantos         ###   ########.fr        #
+#    Updated: 2023/09/27 18:08:15 by tasantos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ HEADERS_DIR		= ./includes/
 SOURCES_DIR		= ./sources/
 
 HEADERS_LIST	= philo.h
-SOURCES_LIST	= philosophers.c
+SOURCES_LIST	= philosophers.c \
+				checker.c
 
 GREEN			= \033[0;32m
 
@@ -73,8 +74,8 @@ ${LIBFT}:
 			make -sC ${LIBFT_DIR}
 			@echo Libft has been compiled!
 
-dance_duck:
-			${CC} ${CFLAGS} ${SOURCES} ${DOT_A} ${LIBFT}
+run:	
+	./philo 1 2 3 4 5
 
 clean:
 			make -sC ${LIBFT_DIR} clean
