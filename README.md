@@ -85,11 +85,26 @@ All projects made by me I'll bring here and tell for everyone, about what is and
   <a href="https://github.com/talessantos49/Projetos-42/tree/main/push_swap">
     <img src="https://user-images.githubusercontent.com/86013047/235564058-ee327ab2-f5c0-46fd-858a-c38a3ef0308a.png"/>
   </a>
+  <a href="https://github.com/talessantos49/Projetos-42/tree/main/push_swap">
+    <img src="https://github.com/talessantos49/Projetos-42/assets/86013047/a5309859-d793-4e87-a0cf-e654924973b5"
+/>
+  </a>
+</div>
+<div align="center">
+    <a href="https://github.com/talessantos49/Projetos-42/tree/main/push_swap">
+      <img src="https://github.com/talessantos49/Projetos-42/assets/86013047/779ba7ef-87e7-498f-9ebc-21a60565b776"/>
+  </a>
+  <a href="https://github.com/talessantos49/Projetos-42/tree/main/push_swap">
+      <img src="https://github.com/talessantos49/Projetos-42/assets/86013047/81463755-ddc1-40e5-a59e-1f1f2d70496f"/>
+  </a>
+</div>
+<div align="center">
+
 </div>
 <div align="left">
   :construction: Projects Under Construction :construction: 
 </div>
-<img src="https://user-images.githubusercontent.com/86013047/235564071-3e4a96b2-0a8a-4829-9c52-a129159e6b90.png"/>
+  <img src="https://github.com/talessantos49/Projetos-42/assets/86013047/24b3eab2-8a41-48fc-8699-fdb117dd463e">
 
 ---
 
