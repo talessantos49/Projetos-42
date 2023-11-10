@@ -115,6 +115,8 @@ All projects made by me I'll bring here and tell for everyone, about what is and
   <a href="https://github.com/talessantos49/Projetos-42/tree/main/Mini-Piscina-Python">
     <img src="https://user-images.githubusercontent.com/86013047/218304417-d6b2c942-892e-4e31-99c7-4a48c120d2ea.svg" width="150px" />
   </a>
+  <a href="https://github.com/talessantos49/Projetos-42/tree/main/Mini-Piscina-CTF">
+    <img src="https://github.com/talessantos49/Projetos-42/assets/86013047/9225454a-2aea-41cc-ad45-58c461dde185" width="250px">
+  </a>
 </div>
-
 
